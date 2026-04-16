@@ -1,0 +1,328 @@
+\subsection{Apéndices}
+\label{subsec:apendices}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Propagación de errores mediante derivadas parciales para la densidad}
+\label{subsubsec:propagacion-errores-densidad}
+
+Partiendo de la expresión de la densidad en función de la masa $M$ y el volumen $V$:
+
+\begin{equation}
+    \rho(M, V) = \frac{M}{V}
+    \label{eq:funcion-densidad}
+\end{equation}
+
+Aplicamos la fórmula para incerteza absoluta de una función de varias variables:
+
+\begin{equation}
+    \Delta \rho = \left| \frac{\partial \rho}{\partial M} \right| \Delta M + \left| \frac{\partial \rho}{\partial V} \right| \Delta V
+    \label{eq:incerteza-general}
+\end{equation}
+
+Derivada respecto a la masa $M$, asumiendo $V$ como constante:
+
+\begin{equation}
+    \frac{\partial \rho}{\partial M} = \frac{1}{V}
+    \label{eq:derivada-masa}
+\end{equation}
+
+Derivada respecto al volumen $V$, asumiendo $M$ como constante:
+
+\begin{equation}
+    \frac{\partial \rho}{\partial V} = -\frac{M}{V^2}
+    \label{eq:derivada-volumen}
+\end{equation}
+
+Obtenemos que la incerteza absoluta de la densidad es:
+
+\begin{equation}
+    \Delta \rho = \frac{1}{V_0} \Delta M + \frac{M_0}{V_0^2} \Delta V
+    \label{eq:incerteza-final}
+\end{equation}
+
+Usando $\varepsilon_x = \Delta X / X_0$ como definición de incerteza o error relativo.
+
+Aplicándolo a nuestro resultado, la incerteza relativa de la densidad es:
+
+\begin{equation}
+    \frac{\Delta \rho}{\rho_0} = \frac{\frac{1}{V_0} \Delta M}{\frac{M_0}{V_0}} + \frac{\frac{M_0}{V_0^2} \Delta V}{\frac{M_0}{V_0}}
+    \label{eq:incerteza-relativa-desarrollo}
+\end{equation}
+
+Simplificando:
+
+\begin{equation}
+    \frac{\Delta \rho}{\rho_0} = \frac{\Delta M}{M_0} + \frac{\Delta V}{V_0}
+    \label{eq:incerteza-relativa-simplificada}
+\end{equation}
+
+Es decir, se obtiene la Ecuación~\eqref{eq:incerteza-relativa-densidad} presentada en la introducción.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Propagación de errores mediante derivadas parciales para el volumen de un cilindro}
+\label{subsubsec:propagacion-errores-volumen-cilindro}
+
+Partiendo de la expresión del volumen de un cilindro en función de su diámetro $d$ y altura $h$:
+
+\begin{equation}
+    V(d, h, \pi) = \frac{\pi}{4} d^2 h
+    \label{eq:funcion-volumen-cilindro}
+\end{equation}
+
+Aplicamos la fórmula para incerteza absoluta de una función de varias variables:
+
+\begin{equation}
+    \Delta V = \left| \frac{\partial V}{\partial d} \right| \Delta d + \left| \frac{\partial V}{\partial h} \right| \Delta h + \left| \frac{\partial V}{\partial \pi} \right| \Delta \pi
+    \label{eq:incerteza-general-volumen}
+\end{equation}
+
+Derivada respecto al diámetro $d$, asumiendo $h$ y $\pi$ como constantes:
+
+\begin{equation}
+    \frac{\partial V}{\partial d} = \frac{\pi}{2} d h
+    \label{eq:derivada-diametro}
+\end{equation}
+
+Derivada respecto a la altura $h$, asumiendo $d$ y $\pi$ como constantes:
+
+\begin{equation}
+    \frac{\partial V}{\partial h} = \frac{\pi}{4} d^2
+    \label{eq:derivada-altura}
+\end{equation}
+
+Derivada respecto a $\pi$, asumiendo $d$ y $h$ como constantes:
+
+\begin{equation}
+    \frac{\partial V}{\partial \pi} = \frac{1}{4} d^2 h
+    \label{eq:derivada-pi}
+\end{equation}
+
+Obtenemos que la incerteza absoluta del volumen de un cilindro es:
+
+\begin{equation}
+    \Delta V = \frac{\pi}{2} d_0 h_0 \Delta d + \frac{\pi}{4} d_0^2 \Delta h + \frac{1}{4} d_0^2 h_0 \Delta \pi
+    \label{eq:incerteza-final-volumen}
+\end{equation}
+
+Usando $\varepsilon_x = \Delta X / X_0$ como definición de incerteza o error relativo.
+
+Aplicándolo a nuestro resultado, la incerteza relativa del volumen de un cilindro es:
+
+\begin{equation}
+    \frac{\Delta V}{V_0} = \frac{\frac{\pi}{2} d_0 h_0 \Delta d}{\frac{\pi}{4} d_0^2 h_0} + \frac{\frac{\pi}{4} d_0^2 \Delta h}{\frac{\pi}{4} d_0^2 h_0} + \frac{\frac{1}{4} d_0^2 h_0 \Delta \pi}{\frac{\pi}{4} d_0^2 h_0}
+    \label{eq:incerteza-relativa-desarrollo-volumen}
+\end{equation}
+
+Simplificando:
+
+\begin{equation}
+    \frac{\Delta V}{V_0} = 2\frac{\Delta d}{d_0} + \frac{\Delta h}{h_0} + \frac{\Delta \pi}{\pi}
+    \label{eq:incerteza-relativa-simplificada-volumen}
+\end{equation}
+
+Es decir, se obtiene la Ecuación~\eqref{eq:incerteza-relativa-volumen-cilindro} presentada en la introducción.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Criterio de elección de $\pi$}
+\label{subsubsec:criterio-eleccion-pi}
+
+El criterio formal adoptado es $10 \cdot \varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
+
+Con los datos para el calibre: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,002 + 0,0029 = 0,0069$.
+
+Se requiere $\varepsilon_\pi < 0,0069$.
+
+\begin{table}[H]
+    \centering
+    \label{tab:eleccion-pi-calibre}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0,0069$ \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/apendices/eleccion-pi-calibre.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+    \end{tabular}
+\end{table}
+
+
+Con los datos para la regla: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,04 + 0,01 = 0,09$.
+
+Se requiere $\varepsilon_\pi < 0,09$.
+
+\begin{table}[H]
+    \centering
+    \label{tab:eleccion-pi-regla}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0,09$ \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/apendices/eleccion-pi-regla.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+
+% TODO VERIFICAR PRACTICA 2
+
+\subsubsection{Apéndice A --- Cálculos detallados y propagación de incertezas}
+
+\paragraph{A.1 Propagación para el calibre (paso a paso).}
+
+\textbf{Datos de partida:} $h = (36{,}69 \pm 0{,}12)$ mm; $d = (24{,}95 \pm 0{,}06)$ mm; $\pi_0 = 3{,}142$ ($\Delta\pi = 0{,}001$).
+
+\textbf{Paso 1 --- Volumen representativo:}
+\begin{equation*}
+    V_0 = \frac{\pi_0}{4} \cdot d_0^2 \cdot h_0 = \frac{3{,}142}{4} \times (24{,}95)^2 \times 36{,}69 = 17\,929 \text{ mm}^3
+\end{equation*}
+
+\textbf{Paso 2 --- Incertezas relativas:}
+\begin{align*}
+    \varepsilon_h &= \Delta h / h_0 = 0{,}12 / 36{,}69 = 0{,}00327 \rightarrow 0{,}33\% \\
+    \varepsilon_d &= \Delta d / d_0 = 0{,}06 / 24{,}95 = 0{,}00240 \rightarrow 0{,}24\% \\
+    \varepsilon_\pi &= \Delta\pi / \pi_0 = 0{,}001 / 3{,}142 = 0{,}000318 \rightarrow 0{,}032\%
+\end{align*}
+
+\textbf{Paso 3 --- Incerteza relativa del volumen:}
+\begin{equation*}
+    \varepsilon_V = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h = 0{,}000318 + 2 \times 0{,}00240 + 0{,}00327 = 0{,}00839 \rightarrow 0{,}84\%
+\end{equation*}
+
+\textbf{Paso 4 --- Incerteza absoluta del volumen:}
+\begin{equation*}
+    \Delta V = \varepsilon_V \cdot V_0 = 0{,}00839 \times 17\,929 = 150 \text{ mm}^3 \quad \Rightarrow \quad V = (17{,}9 \pm 0{,}2) \text{ cm}^3
+\end{equation*}
+
+\textbf{Paso 5 --- Densidad y su incerteza:}
+\begin{align*}
+    \rho_0 &= M_0 / V_0 = 149{,}66 / 17{,}929 = 8{,}347 \text{ g/cm}^3 \\
+    \varepsilon_\rho &= \Delta M / M_0 + \varepsilon_V = 0{,}01/149{,}66 + 0{,}00839 \approx 0{,}00846 \\
+    \Delta\rho &= 0{,}00846 \times 8{,}347 \approx 0{,}071 \text{ g/cm}^3 \rightarrow \text{redondeado: } 0{,}07 \text{ g/cm}^3
+\end{align*}
+
+Resultado: $\rho = (8{,}35 \pm 0{,}07)$ g/cm$^3$ [se adoptó $\Delta\rho = 0{,}09$ como cota conservadora].
+
+
+
+\paragraph{A.3 Cálculo completo de la regresión lineal ($T^2$ vs.\ $L$).}
+
+Se definen $x_i = L_i$ (m) e $y_i = T_i^2$ (s$^2$), con $n = 4$ puntos:
+
+\begin{table}[H]
+    \centering
+    \caption{Sumas para regresión por mínimos cuadrados}
+    \label{tab:sumas-regresion}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $i$ & $x_i$ (m) & $y_i$ (s$^2$) & $x_i^2$ & $x_i \cdot y_i$ & $y_i^2$ \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/apendices/sumas-regresion.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}
+    \end{tabular}
+\end{table}
+
+Cálculo de $S_{xx}$, varianza residual e incertezas:
+\begin{align*}
+    S_{xx} &= \sum x_i^2 - (\sum x_i)^2/n = 2{,}5403 - 3{,}067^2/4 = 0{,}1882 \text{ m}^2 \\
+    \sigma^2 &= \frac{\sum \text{resid}^2}{n-2} = \frac{0{,}001497}{2} = 0{,}000749 \text{ s}^4 \quad \Rightarrow \quad \sigma = 0{,}0274 \text{ s}^2 \\
+    \Delta m &= \sigma / \sqrt{S_{xx}} = 0{,}0274 / 0{,}4338 = 0{,}0631 \approx 0{,}06 \text{ s}^2/\text{m} \\
+    \Delta b &= \sigma \sqrt{\sum x_i^2 / (n \cdot S_{xx})} = 0{,}0274 \times 1{,}837 = 0{,}0503 \approx 0{,}05 \text{ s}^2
+\end{align*}
+
+%\subsubsection{Apéndice B --- Deducción de $\varepsilon_V = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h$}
+
+%Partiendo de $V = (\pi/4)\,d^2\,h$, se aplica propagación de errores mediante diferenciales parciales:
+%\begin{equation*}
+%    \Delta V = \abs{\frac{\partial V}{\partial \pi}} \Delta\pi + \abs{\frac{\partial V}{\partial d}} \Delta d + \abs{\frac{\partial V}{\partial h}} \Delta h
+%\end{equation*}
+
+%Las derivadas parciales son:
+%\begin{align*}
+%    \frac{\partial V}{\partial \pi} &= \frac{1}{4}\,d^2\,h \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial \pi}} \Delta\pi = V \cdot \frac{\Delta\pi}{\pi} = V \cdot \varepsilon_\pi \\
+%    \frac{\partial V}{\partial d} &= \frac{\pi}{2}\,d\,h \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial d}} \Delta d = V \cdot 2\,\frac{\Delta d}{d} = 2\,V\,\varepsilon_d \\
+%    \frac{\partial V}{\partial h} &= \frac{\pi}{4}\,d^2 \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial h}} \Delta h = V \cdot \frac{\Delta h}{h} = V \cdot \varepsilon_h
+%\end{align*}
+
+%Dividiendo por $V$:
+%\begin{equation}
+%    \varepsilon_V = \frac{\Delta V}{V} = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h
+%\end{equation}
+
+%El factor 2 en $\varepsilon_d$ refleja que el diámetro interviene al cuadrado en el volumen, por lo que la precisión en la medición del diámetro es crítica.
+
+\subsubsection{Apéndice C --- ¿Latón o bronce?}
+
+La guía solicita comparar la densidad medida con los valores tabulados:
+\begin{itemize}
+    \item Latón: $\rho \approx 8{,}4$ -- $8{,}7$ g/cm$^3$ (intervalo $[8{,}25;\; 8{,}85]$)
+    \item Bronce: $\rho \approx 7{,}7$ -- $8{,}9$ g/cm$^3$ (intervalo $[7{,}1;\; 9{,}5]$)
+\end{itemize}
+
+El intervalo experimental más preciso (calibre) es $[8{,}26;\; 8{,}44]$ g/cm$^3$. Este se superpone con el del latón, haciendo compatible la identificación del material como latón. El intervalo del bronce es mucho más amplio y también se superpone, pero la mayor parte de su rango queda por debajo de los valores medidos. Con los datos disponibles, el material es más consistente con el latón, aunque no es posible descartarlo completamente. Para una identificación concluyente se requeriría mayor precisión o mayor número de mediciones.
+
+\subsubsection{Apéndice D --- Observaciones sobre el procedimiento}
+
+\begin{itemize}
+    \item \textbf{Práctica 1:} La marca del calibre no fue anotada; se recomienda registrarla siempre.
+    \item \textbf{Práctica 1:} Para la probeta se realizó una sola medición. Sería conveniente realizar tres mediciones para evaluar variaciones fluctuantes.
+    \item \textbf{Práctica 2:} La masa de la esfera no fue medida. Se verificó teóricamente que $T$ es independiente de $m$.
+    \item \textbf{Práctica 2:} Para $\theta = 20°$, la aproximación de pequeña amplitud introduce un error de $\sim$0,5\% en $T$, del mismo orden que el error experimental.
+    \item \textbf{Práctica 2:} La longitud $L$ debe medirse hasta el centro de masa de la esfera. Si el radio no fue sumado, $L$ está subestimada, lo que resulta en un $g$ calculado menor al real, explicando parcialmente la discrepancia con el valor de referencia.
+\end{itemize}
+\fi

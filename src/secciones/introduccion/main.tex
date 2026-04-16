@@ -1,0 +1,123 @@
+\subsection{Introducción Teórica}
+\label{subsec:introduccion-teorica}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Mediciones e Incertezas}
+
+Toda medición experimental contiene una incerteza inherente.
+Esta incerteza puede ser de naturaleza \textbf{sistemática} (siempre del mismo signo, debida a calibración del instrumento, método inadecuado, etc.) o \textbf{accidental/casual} (de signo variable, debida a errores de apreciación del observador, fluctuaciones del objeto, etc).
+
+Para un conjunto de mediciones directas, se establece el siguiente criterio \cite{catedra2007mediciones} para determinar el valor representativo y la incerteza absoluta:
+\begin{itemize}
+    \item Valor medio:
+    \begin{equation}
+        X_0 = \frac{1}{2}(X_{M} + X_{m})
+        \label{eq:valor-medio}
+    \end{equation}
+    \item Incerteza absoluta:
+    \begin{equation}
+        \Delta X = \frac{1}{2}(X_{M} - X_{m})
+        \label{eq:incerteza-absoluta}
+    \end{equation}
+\end{itemize}
+
+Siendo $\varepsilon_I$ la incerteza del instrumento y $V_F$ las variaciones fluctuantes del propio instrumento a medir.
+Cuando $V_F < \varepsilon_I$, el instrumento no tiene la sensibilidad suficiente para detectar las irregularidades del objeto, por lo que se usa $\varepsilon_I$ directamente como incerteza absoluta.
+Cuando $V_F \geq \varepsilon_I$, el instrumento es suficientemente preciso para capturar las irregularidades físicas, y se usa la fórmula antes mencionada.
+
+La expresión final de una medición directa es: $X = X_0 \pm \Delta X$.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Densidad de un Cilindro}
+
+Se define la densidad $\rho$ de un cuerpo de masa $M$ y volumen $V$ como:
+\begin{equation}
+    \rho = \frac{M}{V}
+    \label{eq:densidad}
+\end{equation}
+
+Usando $\varepsilon_x = \Delta X / X_0$ como definición de incerteza o error relativo, y aplicando propagación de errores mediante derivadas parciales.
+Se calcula la incerteza relativa de la densidad como:
+\begin{equation}
+    \varepsilon_\rho = \varepsilon_M + \varepsilon_V
+    \label{eq:incerteza-relativa-densidad}
+\end{equation}
+
+La deducción completa se desarrolla en el Apéndice~\ref{subsubsec:propagacion-errores-densidad}.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Volumen de un Cilindro}
+
+Se define el volumen $V$ de un cilindro de diámetro $d$ y altura $h$ como:
+\begin{equation}
+    V = \frac{\pi}{4} d^2 h
+    \label{eq:volumen-cilindro}
+\end{equation}
+
+Análogamente, se calcula la incerteza relativa del volumen como:
+\begin{equation}
+    \varepsilon_V = 2\,\varepsilon_d + \varepsilon_h + \varepsilon_\pi
+    \label{eq:incerteza-relativa-volumen-cilindro}
+\end{equation}
+
+La deducción completa se desarrolla en el Apéndice~\ref{subsubsec:propagacion-errores-volumen-cilindro}.
+
+El error relativo introducido por $\pi$ ($\varepsilon_\pi = \Delta\pi / \pi_0$) proviene de recortar cifras de un número irracional.
+Para minimizar $\varepsilon_\pi$ se elige la aproximación de $\pi$ que cumpla el criterio $10\,\varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
+
+Con los datos para el calibre, se adoptó $\pi = 3,142$.
+
+Para la regla se adoptó $\pi = 3,14$, suficiente dada la menor precisión de ese instrumento.
+
+El desarrollo del criterio de elección se puede encontrar en el Apéndice~\ref{subsubsec:criterio-eleccion-pi}.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+% TODO VERIFICAR PRACTICA 2
+
+%\subsubsection{Péndulo Simple Ideal}
+%
+%El péndulo simple ideal consiste en una masa puntual suspendida de un hilo inextensible y sin masa, que oscila sin fricción.
+%Para pequeñas amplitudes ($\theta \ll 1$ rad, típicamente $\theta < 15°$), la ecuación de movimiento se linealiza y el período de oscilación resulta independiente tanto de la masa como de la amplitud:
+%\begin{equation}
+%    T = 2\pi \sqrt{\frac{L}{g}} \quad \Longrightarrow \quad T^2 = \frac{4\pi^2}{g}\,L
+%\end{equation}
+%
+%donde $L$ es la longitud del hilo (desde el punto de suspensión hasta el centro de masa de la esfera) y $g$ es la aceleración gravitatoria local.
+%
+%Esta relación es lineal entre $T^2$ y $L$, con pendiente $m = 4\pi^2/g$ y ordenada al origen teóricamente nula.
+%Despejando:
+%\begin{equation}
+%    g = \frac{4\pi^2}{m}
+%\end{equation}
+%
+%La incerteza relativa de $g$ se propaga como:
+%\begin{equation}
+%    \varepsilon_g = \frac{\Delta g}{g} = \frac{\Delta m}{m}
+%\end{equation}
+%
+%\subsubsection{Regresión Lineal por Mínimos Cuadrados}
+%
+%Dado un conjunto de $n$ pares $(x_i, y_i)$ que se modelan como $y = m \cdot x + b$, las estimaciones de pendiente e intercepto por mínimos cuadrados son:
+%\begin{equation}
+%    m = \frac{n \sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - \left(\sum x_i\right)^2}
+%    \qquad
+%    b = \frac{\sum y_i - m \sum x_i}{n}
+%\end{equation}
+%
+%Las incertezas se calculan a partir de la varianza residual $\sigma^2 = \frac{\sum(y_i - m\,x_i - b)^2}{n-2}$:
+%\begin{equation}
+%    \Delta m = \frac{\sigma}{\sqrt{S_{xx}}}
+%    \qquad
+%    \Delta b = \sigma \sqrt{\frac{\sum x_i^2}{n \cdot S_{xx}}}
+%\end{equation}
+%donde $S_{xx} = \sum x_i^2 - (\sum x_i)^2 / n$.
+%
+%El coeficiente de correlación $r$ indica la bondad del ajuste lineal: $r = 1$ implica correlación perfecta.

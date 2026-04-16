@@ -1,0 +1,339 @@
+\subsection{Resultados de las mediciones}
+\label{subsec:resultados-de-las-mediciones}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 1 --- Mediciones con Calibre}
+
+Como $\text{$V_F$} > \varepsilon_I$ tanto para $h$ como para $d$, se aplica la fórmula para incerteza absoluta.
+
+\begin{table}[H]
+    \centering
+    \caption{Mediciones Calibre – Mínima división: 0.01 mm}
+    \label{tab:mediciones-calibre}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Medición} & \textbf{$h$ (mm)} & \textbf{$d$ (mm)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/hoja-mediciones-calibre.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii}
+    \end{tabular}
+\end{table}
+
+Cálculo de volumen del cilindro:
+
+\begin{equation}
+    V_0 = \frac{\pi}{4} \cdot d^2 \cdot h = \frac{3,142}{4} \cdot 24,95^2 \cdot 36,69 = 17940,51 mm^3
+    \label{eq:volumen-cilindro-resolucion-calibre}
+\end{equation}
+
+Cálculo de error relativo del volumen del cilindro:
+
+\begin{equation}
+    \varepsilon_V = 2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,002 + 0,0029 = 0,0078
+    \label{eq:incerteza-relativa-volumen-cilindro-resolucion-calibre}
+\end{equation}
+
+Cálculo de error absoluto del volumen del cilindro:
+
+\begin{equation}
+    \Delta V = V_0 \cdot \varepsilon_V = 17940,51 \cdot 0,0078 = 139,93 mm^3
+    \label{eq:incerteza-absoluta-volumen-cilindro-resolucion-calibre}
+\end{equation}
+
+Volumen final del cilindro:
+
+\begin{equation}
+    \boxed{V_{calibre} = 17940,51 \pm 139,93 mm^3 = 17,94 \pm 0,13 cm^3}
+    \label{eq:volumen-cilindro-calibre}
+\end{equation}
+
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 1 --- Mediciones con Regla Milimetrada}
+
+Para el diámetro, todas las mediciones resultaron idénticas ($d = 25$ mm).
+
+Indicando $\text{$V_F$} < \varepsilon_I$, por lo que $\Delta d = 1$ mm.
+
+\begin{table}[H]
+    \centering
+    \caption{Mediciones Regla – Mínima división: 1 mm}
+    \label{tab:mediciones-regla}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Medición} & \textbf{$h$ (mm)} & \textbf{$d$ (mm)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/hoja-mediciones-regla.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii}
+    \end{tabular}
+\end{table}
+
+Cálculo de volumen del cilindro:
+
+\begin{equation}
+    V_0 = \frac{\pi}{4} \cdot d^2 \cdot h = \frac{3,14}{4} \cdot 25^2 \cdot 36,5 = 17907,81 mm^3
+    \label{eq:volumen-cilindro-resolucion-regla}
+\end{equation}
+
+Cálculo de error relativo del volumen del cilindro:
+
+\begin{equation}
+    \varepsilon_V = 2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,04 + 0,01 = 0,09
+    \label{eq:incerteza-relativa-volumen-cilindro-resolucion-regla}
+\end{equation}
+
+Cálculo de error absoluto del volumen del cilindro:
+
+\begin{equation}
+    \Delta V = V_0 \cdot \varepsilon_V = 17907,81 \cdot 0,09 = 1611,70 mm^3
+    \label{eq:incerteza-absoluta-volumen-cilindro-resolucion-regla}
+\end{equation}
+
+Volumen final del cilindro:
+
+\begin{equation}
+    \boxed{V_{regla} = 17907,81 \pm 1611,70 mm^3 = 17,90 \pm 1,61 cm^3}
+    \label{eq:volumen-cilindro-regla}
+\end{equation}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 1 --- Medición con Probeta Graduada}
+
+Nuevamente $\text{$V_F$} < \varepsilon_I$, por lo que: $\Delta X_1 = \Delta X_2 = 1$ mL
+
+\begin{table}[H]
+    \centering
+    \caption{Mediciones Probeta Graduada – Mínima división: 1 mL}
+    \label{tab:mediciones-probeta-graduada}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Medición} & \textbf{$X_1$ (mL)} & \textbf{$X_2$ (mL)} & \textbf{$V = X_2 - X_1$ (mL)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/hoja-mediciones-probeta.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+    \end{tabular}
+\end{table}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 1 --- Medición con Balanza Electrónica}
+
+\begin{table}[H]
+    \centering
+    \caption{Mediciones Balanza Electrónica – Mínima división: 0,01 g}
+    \label{tab:mediciones-balanza-electronica}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Medición} & \textbf{$M$ (g)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/hoja-mediciones-balanza.csv}{}
+        {\csvcoli & \csvcolii}
+    \end{tabular}
+\end{table}
+
+La incertidumbre relativa $\varepsilon_M = 0,01/149,66 \approx 0,00006$ es despreciable frente a las incertidumbres volumétricas.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 1 --- Cálculo de la densidad en función de los tres instrumentos}
+
+Cálculo de la densidad para el calibre:
+
+\begin{equation}
+    \rho_0 = \frac{M}{V} = \frac{149,66}{17,94} = 8.34 \frac{g}{cm^3}
+    \label{eq:densidad-resolucion-calibre}
+\end{equation}
+
+\begin{equation}
+    \varepsilon_\rho = \varepsilon_V = 0,0078
+    \label{eq:incerteza-relativa-densidad-calibre}
+\end{equation}
+
+\begin{equation}
+    \Delta \rho = \rho_0 \cdot \varepsilon_\rho = 8.34 \cdot 0,0078 = 0,065 \frac{g}{cm^3}
+    \label{eq:incerteza-absoluta-densidad-resolucion-calibre}
+\end{equation}
+
+\begin{equation}
+    \boxed{\rho_{calibre} = 8.34 \pm 0,065 \frac{g}{cm^3}}
+    \label{eq:densidad-resolucion-final-calibre}
+\end{equation}
+
+Cálculo de la densidad para la regla milimetrada:
+
+\begin{equation}
+    \rho_0 = \frac{M}{V} = \frac{149,66}{17,90} = 8,36 \frac{g}{cm^3}
+    \label{eq:densidad-resolucion-regla}
+\end{equation}
+
+\begin{equation}
+    \varepsilon_\rho = \varepsilon_V = 0,09
+    \label{eq:incerteza-relativa-densidad-regla}
+\end{equation}
+
+\begin{equation}
+    \Delta \rho = \rho_0 \cdot \varepsilon_\rho = 8,36 \cdot 0,09 = 0,75 \frac{g}{cm^3}
+    \label{eq:incerteza-absoluta-densidad-resolucion-regla}
+\end{equation}
+
+\begin{equation}
+    \boxed{\rho_{regla} = 8,36 \pm 0,75 \frac{g}{cm^3}}
+    \label{eq:densidad-resolucion-final-regla}
+\end{equation}
+
+Cálculo de la densidad para la probeta graduada:
+
+\begin{equation}
+    \rho_0 = \frac{M}{V} = \frac{149,66}{18} = 8,31 \frac{g}{cm^3}
+    \label{eq:densidad-resolucion-probeta}
+\end{equation}
+
+\begin{equation}
+    \varepsilon_\rho = \varepsilon_V = 0,11
+    \label{eq:incerteza-relativa-densidad-probeta}
+\end{equation}
+
+\begin{equation}
+    \Delta \rho = \rho_0 \cdot \varepsilon_\rho = 8,31 \cdot 0,11 = 0,91 \frac{g}{cm^3}
+    \label{eq:incerteza-absoluta-densidad-resolucion-probeta}
+\end{equation}
+
+\begin{equation}
+    \boxed{\rho_{probeta} = 8,31 \pm 0,91 \frac{g}{cm^3}}
+    \label{eq:densidad-resolucion-final-probeta}
+\end{equation}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+% TODO VERIFICAR PRACTICA 2
+
+%\subsubsection{Práctica 2 --- Péndulo Ideal}
+%
+%\paragraph{Datos de Configuración.}
+%Instrumento para medir $L$: regla milimetrada ($\Delta L = \pm 1$ mm). Número de oscilaciones medidas: $n = 20$. Masa de la esfera: no medida (no necesaria, ya que $T$ es independiente de $m$).
+%
+%\paragraph{Tiempos de Oscilación Medidos.}
+%La siguiente tabla presenta los tiempos medidos para $n = 20$ oscilaciones. Cuando se realizaron dos mediciones, se indica el promedio.
+%
+%\begin{table}[H]
+%    \centering
+%    \caption{Tiempos de 20 oscilaciones $t$ (s) para distintas longitudes y amplitudes}
+%    \label{tab:tiempos}
+%    \begin{tabular}{|c|c|c|c|c|}
+%        \hline
+%        \textbf{$L$ (mm)} & $\theta = 5°$ & $\theta = 9°$ & $\theta = 15°$ & $\theta = 20°$ \\ \hline
+%        \csvreader[
+%            separator=semicolon,
+%            head=true,
+%            late after line=\\ \hline
+%        ]{secciones/resultados/tiempos-oscilaciones.csv}{}
+%        {\textbf{\csvcoli} & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
+%    \end{tabular}
+%\end{table}
+%
+%\paragraph{Períodos y Análisis $T$ vs.\ Amplitud.}
+%Se calculó el período $T = t/n$ para cada combinación $(L, \theta)$:
+%
+%\begin{table}[H]
+%    \centering
+%    \caption{Períodos $T$ (s) calculados para cada longitud y amplitud}
+%    \label{tab:periodos}
+%    \begin{tabular}{|c|c|c|c|c|c|}
+%        \hline
+%        \textbf{$L$ (mm)} & $T$ ($\theta=5°$) & $T$ ($\theta=9°$) & $T$ ($\theta=15°$) & $T$ ($\theta=20°$) & $T_{\text{prom}}$ \\ \hline
+%        \csvreader[
+%            separator=semicolon,
+%            head=true,
+%            late after line=\\ \hline
+%        ]{secciones/resultados/periodos.csv}{}
+%        {\textbf{\csvcoli} & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \textbf{\csvcolvi}}
+%    \end{tabular}
+%\end{table}
+%
+%\textbf{Análisis de independencia $T$ --- amplitud:} Para cada longitud, los períodos presentan variaciones del orden de 0,02--0,04 s, comparables con la incerteza temporal ($\Delta T \approx 0{,}005$--$0{,}010$ s). Se concluye que, dentro del margen experimental, $T$ no depende de la amplitud para los ángulos ensayados.
+%
+%\paragraph{Tabla $T^2$ vs.\ $L$ para Regresión Lineal.}
+%
+%\begin{table}[H]
+%    \centering
+%    \caption{Datos para regresión lineal $T^2$ vs.\ $L$}
+%    \label{tab:regresion-datos}
+%    \begin{tabular}{|c|c|c|c|}
+%        \hline
+%        \textbf{$L$ (mm)} & \textbf{$L$ (m)} & \textbf{$T_{\text{prom}}$ (s)} & \textbf{$T^2$ (s$^2$)} \\ \hline
+%        \csvreader[
+%            separator=semicolon,
+%            head=true,
+%            late after line=\\ \hline
+%        ]{secciones/resultados/regresion-datos.csv}{}
+%        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+%    \end{tabular}
+%\end{table}
+%
+%\paragraph{Regresión Lineal y Cálculo de $g$.}
+%Se aplica mínimos cuadrados para ajustar $T^2 = m \cdot L + b$ con $n = 4$ puntos. Las sumas necesarias son:
+%
+%$\sum x_i = 3{,}067$ m; \quad $\sum y_i = 12{,}377$ s$^2$; \quad $\sum x_i^2 = 2{,}540$ m$^2$; \quad $\sum x_i y_i = 10{,}390$ m$\cdot$s$^2$
+%
+%\textbf{Pendiente:}
+%\begin{equation*}
+%    m = \frac{4 \times 10{,}390 - 3{,}067 \times 12{,}377}{4 \times 2{,}540 - 3{,}067^2} = \frac{41{,}560 - 37{,}970}{10{,}160 - 9{,}407} = \frac{3{,}590}{0{,}753} = 4{,}127 \text{ s}^2/\text{m}
+%\end{equation*}
+%
+%\textbf{Ordenada al origen:}
+%\begin{equation*}
+%    b = \frac{12{,}377 - 4{,}127 \times 3{,}067}{4} = \frac{12{,}377 - 12{,}657}{4} = -0{,}070 \text{ s}^2
+%\end{equation*}
+%
+%\textbf{Varianza residual:} Residuos: $-0{,}016$; $+0{,}030$; $-0{,}020$; $+0{,}006$ s$^2$. $\sum \text{resid}^2 = 0{,}001436$ s$^4$. $\sigma^2 = 0{,}001436/2 = 0{,}000718$ s$^4$. $\sigma = 0{,}0268$ s$^2$.
+%
+%$S_{xx} = \sum x_i^2 - (\sum x_i)^2/n = 2{,}540 - 9{,}407/4 = 0{,}188$ m$^2$.
+%
+%\textbf{Incerteza de la pendiente:} $\Delta m = \sigma / \sqrt{S_{xx}} = 0{,}0268 / 0{,}4336 = 0{,}062 \approx 0{,}06$ s$^2$/m
+%
+%\textbf{Incerteza de la ordenada:} $\Delta b = \sigma \sqrt{\sum x_i^2 / (n \cdot S_{xx})} = 0{,}0268 \times 1{,}838 = 0{,}049 \approx 0{,}05$ s$^2$
+%
+%\textbf{Coeficiente de correlación:} $r = 0{,}9998 \;\rightarrow\; r^2 = 0{,}9996$, indicando correlación lineal excelente.
+%
+%\begin{table}[H]
+%    \centering
+%    \caption{Resultados de la regresión lineal}
+%    \label{tab:regresion-resultados}
+%    \begin{tabular}{|l|c|c|c|}
+%        \hline
+%        \textbf{Parámetro} & \textbf{Valor} & \textbf{$\Delta$} & \textbf{Unidad} \\ \hline
+%        \csvreader[
+%            separator=semicolon,
+%            head=true,
+%            late after line=\\ \hline
+%        ]{secciones/resultados/regresion-resultados.csv}{}
+%        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+%    \end{tabular}
+%\end{table}
+%
+%\textbf{Cálculo de $g$:} $g = 4\pi^2 / m = 39{,}478 / 4{,}127 = 9{,}566$ m/s$^2$. Propagando: $\Delta g / g = \Delta m / m = 0{,}06/4{,}127 = 0{,}0145$. $\Delta g = 0{,}0145 \times 9{,}566 \approx 0{,}14 \approx 0{,}1$ m/s$^2$.
+%
+%\begin{equation*}
+%    \boxed{g = (9{,}6 \pm 0{,}1) \text{ m/s}^2}
+%\end{equation*}
