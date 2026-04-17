@@ -31,6 +31,8 @@
 \usepackage{titlesec}
 \usepackage{csvsimple}
 \usepackage{threeparttable}
+\usepackage{textcomp}
+\usepackage{xcolor}
 
 \setlength{\parindent}{1.25em}
 \setlength{\parskip}{0.4em}
@@ -53,6 +55,9 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
+
+% TODO bloque de comentarios, sacar al final
+\newcommand{\todo}[1]{\vspace{2mm}\noindent\colorbox{yellow}{\textbf{TODO:}}\colorbox{yellow!20}{\parbox[t]{0.9\textwidth}{#1}}\vspace{2mm}}
 
 \begin{document}
 \pagenumbering{gobble}

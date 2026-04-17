@@ -175,154 +175,321 @@ Se requiere $\varepsilon_\pi < 0,09$.
     \end{tabular}
 \end{table}
 
+% ####################################################################################################################
+% ####################################################################################################################
 
+\clearpage
+\subsubsection{Desarrollo del ajuste por cuadrados mínimos}
+\label{subsubsec:ajuste-cuadrados-minimos-pendulo}
 
+Se puede encontrar el mejor ajuste por cuadrados mínimos analíticamente (minimizando el error con derivadas, como se vio en Análisis Matemático) o con un enfoque matricial, como se vio en Álgebra.
+Vamos a utilizar este último camino.
 
+Idealmente, querríamos que $f(x) = c_1 \cdot x  + c_2$ tenga los valores correctos en los 4 puntos:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\iffalse
-
-% TODO VERIFICAR PRACTICA 2
-
-\subsubsection{Apéndice A --- Cálculos detallados y propagación de incertezas}
-
-\paragraph{A.1 Propagación para el calibre (paso a paso).}
-
-\textbf{Datos de partida:} $h = (36{,}69 \pm 0{,}12)$ mm; $d = (24{,}95 \pm 0{,}06)$ mm; $\pi_0 = 3{,}142$ ($\Delta\pi = 0{,}001$).
-
-\textbf{Paso 1 --- Volumen representativo:}
-\begin{equation*}
-    V_0 = \frac{\pi_0}{4} \cdot d_0^2 \cdot h_0 = \frac{3{,}142}{4} \times (24{,}95)^2 \times 36{,}69 = 17\,929 \text{ mm}^3
-\end{equation*}
-
-\textbf{Paso 2 --- Incertezas relativas:}
-\begin{align*}
-    \varepsilon_h &= \Delta h / h_0 = 0{,}12 / 36{,}69 = 0{,}00327 \rightarrow 0{,}33\% \\
-    \varepsilon_d &= \Delta d / d_0 = 0{,}06 / 24{,}95 = 0{,}00240 \rightarrow 0{,}24\% \\
-    \varepsilon_\pi &= \Delta\pi / \pi_0 = 0{,}001 / 3{,}142 = 0{,}000318 \rightarrow 0{,}032\%
-\end{align*}
-
-\textbf{Paso 3 --- Incerteza relativa del volumen:}
-\begin{equation*}
-    \varepsilon_V = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h = 0{,}000318 + 2 \times 0{,}00240 + 0{,}00327 = 0{,}00839 \rightarrow 0{,}84\%
-\end{equation*}
-
-\textbf{Paso 4 --- Incerteza absoluta del volumen:}
-\begin{equation*}
-    \Delta V = \varepsilon_V \cdot V_0 = 0{,}00839 \times 17\,929 = 150 \text{ mm}^3 \quad \Rightarrow \quad V = (17{,}9 \pm 0{,}2) \text{ cm}^3
-\end{equation*}
-
-\textbf{Paso 5 --- Densidad y su incerteza:}
-\begin{align*}
-    \rho_0 &= M_0 / V_0 = 149{,}66 / 17{,}929 = 8{,}347 \text{ g/cm}^3 \\
-    \varepsilon_\rho &= \Delta M / M_0 + \varepsilon_V = 0{,}01/149{,}66 + 0{,}00839 \approx 0{,}00846 \\
-    \Delta\rho &= 0{,}00846 \times 8{,}347 \approx 0{,}071 \text{ g/cm}^3 \rightarrow \text{redondeado: } 0{,}07 \text{ g/cm}^3
-\end{align*}
-
-Resultado: $\rho = (8{,}35 \pm 0{,}07)$ g/cm$^3$ [se adoptó $\Delta\rho = 0{,}09$ como cota conservadora].
-
-
-
-\paragraph{A.3 Cálculo completo de la regresión lineal ($T^2$ vs.\ $L$).}
-
-Se definen $x_i = L_i$ (m) e $y_i = T_i^2$ (s$^2$), con $n = 4$ puntos:
-
-\begin{table}[H]
-    \centering
-    \caption{Sumas para regresión por mínimos cuadrados}
-    \label{tab:sumas-regresion}
-    \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $i$ & $x_i$ (m) & $y_i$ (s$^2$) & $x_i^2$ & $x_i \cdot y_i$ & $y_i^2$ \\ \hline
-        \csvreader[
-            separator=semicolon,
-            head=true,
-            late after line=\\ \hline
-        ]{secciones/apendices/sumas-regresion.csv}{}
-        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}
-    \end{tabular}
-\end{table}
-
-Cálculo de $S_{xx}$, varianza residual e incertezas:
-\begin{align*}
-    S_{xx} &= \sum x_i^2 - (\sum x_i)^2/n = 2{,}5403 - 3{,}067^2/4 = 0{,}1882 \text{ m}^2 \\
-    \sigma^2 &= \frac{\sum \text{resid}^2}{n-2} = \frac{0{,}001497}{2} = 0{,}000749 \text{ s}^4 \quad \Rightarrow \quad \sigma = 0{,}0274 \text{ s}^2 \\
-    \Delta m &= \sigma / \sqrt{S_{xx}} = 0{,}0274 / 0{,}4338 = 0{,}0631 \approx 0{,}06 \text{ s}^2/\text{m} \\
-    \Delta b &= \sigma \sqrt{\sum x_i^2 / (n \cdot S_{xx})} = 0{,}0274 \times 1{,}837 = 0{,}0503 \approx 0{,}05 \text{ s}^2
-\end{align*}
-
-%\subsubsection{Apéndice B --- Deducción de $\varepsilon_V = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h$}
-
-%Partiendo de $V = (\pi/4)\,d^2\,h$, se aplica propagación de errores mediante diferenciales parciales:
-%\begin{equation*}
-%    \Delta V = \abs{\frac{\partial V}{\partial \pi}} \Delta\pi + \abs{\frac{\partial V}{\partial d}} \Delta d + \abs{\frac{\partial V}{\partial h}} \Delta h
-%\end{equation*}
-
-%Las derivadas parciales son:
-%\begin{align*}
-%    \frac{\partial V}{\partial \pi} &= \frac{1}{4}\,d^2\,h \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial \pi}} \Delta\pi = V \cdot \frac{\Delta\pi}{\pi} = V \cdot \varepsilon_\pi \\
-%    \frac{\partial V}{\partial d} &= \frac{\pi}{2}\,d\,h \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial d}} \Delta d = V \cdot 2\,\frac{\Delta d}{d} = 2\,V\,\varepsilon_d \\
-%    \frac{\partial V}{\partial h} &= \frac{\pi}{4}\,d^2 \quad \Rightarrow \quad \abs{\frac{\partial V}{\partial h}} \Delta h = V \cdot \frac{\Delta h}{h} = V \cdot \varepsilon_h
-%\end{align*}
-
-%Dividiendo por $V$:
-%\begin{equation}
-%    \varepsilon_V = \frac{\Delta V}{V} = \varepsilon_\pi + 2\,\varepsilon_d + \varepsilon_h
-%\end{equation}
-
-%El factor 2 en $\varepsilon_d$ refleja que el diámetro interviene al cuadrado en el volumen, por lo que la precisión en la medición del diámetro es crítica.
-
-\subsubsection{Apéndice C --- ¿Latón o bronce?}
-
-La guía solicita comparar la densidad medida con los valores tabulados:
+\begin{center}
 \begin{itemize}
-    \item Latón: $\rho \approx 8{,}4$ -- $8{,}7$ g/cm$^3$ (intervalo $[8{,}25;\; 8{,}85]$)
-    \item Bronce: $\rho \approx 7{,}7$ -- $8{,}9$ g/cm$^3$ (intervalo $[7{,}1;\; 9{,}5]$)
+    \item \centering $f(0{,}517) = c_1 \cdot 0{,}517 + c_2 = 2{,}0620$
+    \item \centering $f(0{,}73) = c_1 \cdot 0{,}73 + c_2 = 2{,}9036$
+    \item \centering $f(0{,}82) = c_1 \cdot 0{,}82 + c_2 = 3{,}3690$
+    \item \centering $f(1) = c_1 \cdot 1 + c_2 = 4{,}0884$
+\end{itemize}
+\end{center}
+
+Esto se puede reescribir matricialmente como:
+
+\begin{equation}
+    \begin{bmatrix}
+        0,517 & 1 \\
+        0,730 & 1 \\
+        0,820 & 1 \\
+        1,000 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        c_1 \\
+        c_2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        2,0620 \\
+        2,9036 \\
+        3,3690 \\
+        4,0884
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-expresion-inicial}
+\end{equation}
+
+donde:
+
+\begin{equation}
+    A =
+    \begin{bmatrix}
+        0{,}517 & 1 \\
+        0{,}730 & 1 \\
+        0{,}820 & 1 \\
+        1{,}000 & 1
+    \end{bmatrix}
+    \quad
+    \vec{x} =
+    \begin{bmatrix}
+        c_1 \\
+        c_2
+    \end{bmatrix}
+    \quad
+    \vec{b} =
+    \begin{bmatrix}
+        2{,}0620 \\
+        2{,}9036 \\
+        3{,}3690 \\
+        4{,}0884
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-partes-de-la-expresion-inicial}
+\end{equation}
+
+Para encontrar el mejor ajuste, multiplicamos ambos lados por $A^T$ y resolvemos el sistema $A^T A \vec{x} = A^T \vec{b}$.
+Entonces, nos queda:
+
+\begin{equation}
+    A^T \cdot A =
+    \begin{bmatrix}
+        0{,}517 & 0{,}730 & 0{,}820 & 1{,}000 \\
+        1       & 1       & 1       & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        0{,}517 & 1 \\
+        0{,}730 & 1 \\
+        0{,}820 & 1 \\
+        1{,}000 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        2{,}472589 & 3{,}067 \\
+        3{,}067 & 4
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-ATA}
+\end{equation}
+
+\begin{equation}
+    A^T \cdot b =
+    \begin{bmatrix}
+        0{,}517 & 0{,}730 & 0{,}820 & 1{,}000 \\
+        1       & 1       & 1       & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        2{,}0620 \\
+        2{,}9036 \\
+        3{,}3690 \\
+        4{,}0884
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        10{,}036662 \\
+        12{,}423
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-ATb}
+\end{equation}
+
+Finalmente, invirtiendo la matriz $A^T A$ y multiplicándola a ambos lados, obtenemos:
+
+\begin{equation}
+    \vec{x} = (A^T A)^{-1} A^T \vec{b}
+    \label{eq:cuadrados-minimos-solucion-1}
+\end{equation}
+
+\begin{equation}
+    =
+    \begin{bmatrix}
+        2{,}472589 & 3{,}067 \\
+        3{,}067 & 4
+    \end{bmatrix}
+    ^{-1}
+    \begin{bmatrix}
+        10{,}036662 \\
+        12{,}423
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-solucion-2}
+\end{equation}
+
+\begin{equation}
+    =
+    \begin{bmatrix}
+        8{,}266734454 & -6{,}338518643 \\
+        -6{,}338518643 & 5{,}110059169
+    \end{bmatrix}
+    \begin{bmatrix}
+        10{,}036662 \\
+        12{,}423
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-solucion-3}
+\end{equation}
+
+\begin{equation}
+    =
+    \begin{bmatrix}
+        4{,}227002475 \\
+        -0{,}135304144
+    \end{bmatrix}
+    \label{eq:cuadrados-minimos-solucion-4}
+\end{equation}
+
+Entonces, el mejor ajuste por cuadrados mínimos es $a(x) = 4{,}227002475 \cdot x -0{,}135304144$.
+
+Se verificó el resultado del desarrollo manual con una planilla de cálculo y se obtuvo el mismo resultado $a(x) = 4{,}23 \cdot x -0{,}135$.\\
+
+El error $r = \sum_{i=0}^{k} (y_i - f(x_i))^2$ es igual a la norma al cuadrado del vector $\vec{b} - A\vec{x}$, es decir:
+
+\begin{equation}
+    r = \|\vec{b} - A\vec{x}\|^2
+    \label{eq:error-cuadrados-minimos}
+\end{equation}
+
+Primero obtenemos $A\vec{x}$
+
+\begin{equation}
+    A\vec{x} =
+    \begin{bmatrix}
+        0{,}517 & 1 \\
+        0{,}730 & 1 \\
+        0{,}820 & 1 \\
+        1{,}000 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        4{,}227002475 \\
+        -0{,}135304144
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        2{,}050056136 \\
+        2{,}950407663 \\
+        3{,}330837886 \\
+        4{,}091698331
+    \end{bmatrix}
+    \label{eq:error-cuadrados-minimos-Ax}
+\end{equation}
+
+Finalmente, obtenemos el error cuadrático total $r$:
+
+\begin{equation}
+    \vec{b} - A\vec{x} =
+    \begin{bmatrix}
+        2{,}0620 \\
+        2{,}9036 \\
+        3{,}3690 \\
+        4{,}0884
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+        2{,}050056136 \\
+        2{,}950407663 \\
+        3{,}330837886 \\
+        4{,}091698331
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0{,}011943864 \\
+        -0{,}046807663 \\
+        0{,}038162114 \\
+        -0{,}003298331
+    \end{bmatrix}
+    \label{eq:error-cuadrados-minimos-resolucion}
+\end{equation}
+
+\begin{equation}
+    r = \|
+    \begin{bmatrix}
+        0{,}011943864 \\
+        -0{,}046807663 \\
+        0{,}038162114 \\
+        -0{,}003298331
+    \end{bmatrix}
+    \| ^2
+    \label{eq:error-cuadrados-minimos-resolucion-2}
+\end{equation}
+
+\begin{equation}
+    r = 0,003800839135
+    \label{eq:error-cuadrados-minimos-r}
+\end{equation}
+
+Con el objetivo de validar nuestro desarrollo manual, se decidió calcular coeficiente de correlación $R^2$ a fin de comparar el resultado con el valor obtenido mediante una planilla de cálculo.
+
+\begin{equation}
+    R^2 = 1 - \frac{r}{\sum (y_i - \bar{y})^2}
+    \label{eq:error-cuadrados-minimos-formula-R2}
+\end{equation}
+
+Calculamos el promedio $\bar{y}$:
+
+\begin{equation}
+    \bar{y} = \frac{1}{n} \sum y_i = \frac{2{,}0620 + 2{,}9036 + 3{,}3690 + 4{,}0884}{4} = 3{,}10575
+    \label{eq:error-cuadrados-minimos-promedio-para-R2}
+\end{equation}
+
+Calculamos la sumatoria del denominador:
+
+\begin{equation}
+    \sum (y_i - \bar{y})^2 =
+    (2{,}0620 - \bar{y})^2 +
+    (2{,}9036 - \bar{y})^2 +
+    (3{,}3690 - \bar{y})^2 +
+    (4{,}0884 - \bar{y})^2
+    = 2,16518027
+    \label{eq:error-cuadrados-minimos-divisor-para-R2}
+\end{equation}
+
+Finalmente:
+
+\begin{equation}
+    R^2 = 1 - \frac{0,003800839135}{2,16518027} = 0,9982445623
+    \label{eq:error-cuadrados-minimos-formula-R2-resolucion}
+\end{equation}
+
+\todo{En todos los calculos del ajuste por cuadrados mínimos usé tantos digitos como la calculadora me dio, la idea era evitar ir acumulando errores de redondeo, de hecho el resultado me quedo clavado con el Google Sheets, pero queda verboso y se lee feo, habria que adoptar una convencion y redondear todos los valores intermedios.
+Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho con IA, al ser predictivas, no pueden mantener consistentemente tantos digitos significativo (problema que tenía la primera resolucion)}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Contestación de preguntas de la guía experimental}
+\label{subsubsec:contestacion-preguntas-guia}
+
+\paragraph{Práctica 1 --- Criterios de Recorte y Precisión}
+\begin{itemize}
+    \item El caso del número $\pi$: ¿Cuántos decimales se le deben asignar al número $\pi$ para que el error cometido por el recorte sea despreciable frente al error de las mediciones directas?
+    \item Defina y justifique el criterio utilizado para llamar a un error ``despreciable'' (por ejemplo: que sea 10, 50 o 100 veces menor que la menor de las incertezas medidas).
 \end{itemize}
 
-El intervalo experimental más preciso (calibre) es $[8{,}26;\; 8{,}44]$ g/cm$^3$. Este se superpone con el del latón, haciendo compatible la identificación del material como latón. El intervalo del bronce es mucho más amplio y también se superpone, pero la mayor parte de su rango queda por debajo de los valores medidos. Con los datos disponibles, el material es más consistente con el latón, aunque no es posible descartarlo completamente. Para una identificación concluyente se requeriría mayor precisión o mayor número de mediciones.
-
-\subsubsection{Apéndice D --- Observaciones sobre el procedimiento}
-
+\paragraph{Práctica 1 --- Análisis de Resultados y Conclusiones}
 \begin{itemize}
-    \item \textbf{Práctica 1:} La marca del calibre no fue anotada; se recomienda registrarla siempre.
-    \item \textbf{Práctica 1:} Para la probeta se realizó una sola medición. Sería conveniente realizar tres mediciones para evaluar variaciones fluctuantes.
-    \item \textbf{Práctica 2:} La masa de la esfera no fue medida. Se verificó teóricamente que $T$ es independiente de $m$.
-    \item \textbf{Práctica 2:} Para $\theta = 20°$, la aproximación de pequeña amplitud introduce un error de $\sim$0,5\% en $T$, del mismo orden que el error experimental.
-    \item \textbf{Práctica 2:} La longitud $L$ debe medirse hasta el centro de masa de la esfera. Si el radio no fue sumado, $L$ está subestimada, lo que resulta en un $g$ calculado menor al real, explicando parcialmente la discrepancia con el valor de referencia.
+    \item Compare los valores de densidad obtenidos mediante los tres métodos (calibre, regla milimetrada y probeta graduada). ¿Se superponen sus rangos de incerteza?
+    \item Represente gráficamente los intervalos sobre la recta real. En base a esto: ¿Son las mediciones comparables entre sí? (Es decir, ¿existe una franja de intersección no nula entre todas las bandas de incerteza?).
+    \item Tras buscar los valores tabulados para la densidad del latón y del bronce en manuales técnicos: ¿Es posible decidir con seguridad de qué material está construido el cilindro utilizado en la práctica? Justifique su respuesta comparando los intervalos medidos con los valores de tabla.
 \end{itemize}
-\fi
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\paragraph{Práctica 2 --- Análisis del Modelo Teórico}
+\begin{itemize}
+    \item Dada la solución $x(t) = A_0 \text{sen}(\omega t + \varphi_0)$ para un movimiento armónico simple: ¿Cuáles son las variables en la ecuación y cuáles los parámetros?
+    \item ¿Cuáles de los parámetros son característicos del sistema oscilante y cuáles dependen de un agente externo?
+    \item Verifique que la ecuación anterior es solución de la ecuación diferencial del movimiento $a = \frac{d^2x}{dt^2} = -\omega^2x$ e indique otra solución posible.
+    \item A partir de las leyes de Newton para un péndulo ideal, halle la ecuación diferencial:
+    \[ \frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta) \]
+    Especifique el sistema de coordenadas utilizado para su obtención.
+    \item Al realizar la aproximación para ángulos pequeños ($\text{sen}(\theta) \cong \theta$), la ecuación se reescribe como $\frac{d^2\theta}{dt^2} = -\frac{g}{L}\theta$. ¿A qué tipo de movimiento corresponde? Escriba una posible solución $\theta(t)$.
+\end{itemize}
+
+\paragraph{Práctica 2 --- Diseño Experimental y Procedimiento}
+\begin{itemize}
+    \item Considerando los elementos disponibles (cinta métrica, calibre, cronómetro manual): ¿Podemos esperar obtener un valor de $g$ con un error menor al 2\%?
+    \item En base al Anexo 1 (Análisis de dependencias del período):
+    \begin{itemize}
+        \item ¿Depende el período de la amplitud de oscilación? Analice tanto para amplitudes grandes como pequeñas.
+        \item ¿Depende el período de la masa del cuerpo suspendido?
+        \item ¿Depende el período de la longitud del hilo?
+    \end{itemize}
+\end{itemize}
+
+\todo{Recopile las preguntas que aparecen en ambas guías, los criterios de entrega especifican que las respuestas deben estar en el apéndice, algunas de estas preguntas ya se responden en otros lugares, habría que verlas una por una y responderlas.}

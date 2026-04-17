@@ -226,114 +226,111 @@ Cálculo de la densidad para la probeta graduada:
 % ####################################################################################################################
 % ####################################################################################################################
 
-% TODO VERIFICAR PRACTICA 2
+\subsubsection{Práctica 2 --- Mediciones del péndulo ideal}
 
-%\subsubsection{Práctica 2 --- Péndulo Ideal}
-%
-%\paragraph{Datos de Configuración.}
-%Instrumento para medir $L$: regla milimetrada ($\Delta L = \pm 1$ mm). Número de oscilaciones medidas: $n = 20$. Masa de la esfera: no medida (no necesaria, ya que $T$ es independiente de $m$).
-%
-%\paragraph{Tiempos de Oscilación Medidos.}
-%La siguiente tabla presenta los tiempos medidos para $n = 20$ oscilaciones. Cuando se realizaron dos mediciones, se indica el promedio.
-%
-%\begin{table}[H]
-%    \centering
-%    \caption{Tiempos de 20 oscilaciones $t$ (s) para distintas longitudes y amplitudes}
-%    \label{tab:tiempos}
-%    \begin{tabular}{|c|c|c|c|c|}
-%        \hline
-%        \textbf{$L$ (mm)} & $\theta = 5°$ & $\theta = 9°$ & $\theta = 15°$ & $\theta = 20°$ \\ \hline
-%        \csvreader[
-%            separator=semicolon,
-%            head=true,
-%            late after line=\\ \hline
-%        ]{secciones/resultados/tiempos-oscilaciones.csv}{}
-%        {\textbf{\csvcoli} & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
-%    \end{tabular}
-%\end{table}
-%
-%\paragraph{Períodos y Análisis $T$ vs.\ Amplitud.}
-%Se calculó el período $T = t/n$ para cada combinación $(L, \theta)$:
-%
-%\begin{table}[H]
-%    \centering
-%    \caption{Períodos $T$ (s) calculados para cada longitud y amplitud}
-%    \label{tab:periodos}
-%    \begin{tabular}{|c|c|c|c|c|c|}
-%        \hline
-%        \textbf{$L$ (mm)} & $T$ ($\theta=5°$) & $T$ ($\theta=9°$) & $T$ ($\theta=15°$) & $T$ ($\theta=20°$) & $T_{\text{prom}}$ \\ \hline
-%        \csvreader[
-%            separator=semicolon,
-%            head=true,
-%            late after line=\\ \hline
-%        ]{secciones/resultados/periodos.csv}{}
-%        {\textbf{\csvcoli} & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \textbf{\csvcolvi}}
-%    \end{tabular}
-%\end{table}
-%
-%\textbf{Análisis de independencia $T$ --- amplitud:} Para cada longitud, los períodos presentan variaciones del orden de 0,02--0,04 s, comparables con la incerteza temporal ($\Delta T \approx 0{,}005$--$0{,}010$ s). Se concluye que, dentro del margen experimental, $T$ no depende de la amplitud para los ángulos ensayados.
-%
-%\paragraph{Tabla $T^2$ vs.\ $L$ para Regresión Lineal.}
-%
-%\begin{table}[H]
-%    \centering
-%    \caption{Datos para regresión lineal $T^2$ vs.\ $L$}
-%    \label{tab:regresion-datos}
-%    \begin{tabular}{|c|c|c|c|}
-%        \hline
-%        \textbf{$L$ (mm)} & \textbf{$L$ (m)} & \textbf{$T_{\text{prom}}$ (s)} & \textbf{$T^2$ (s$^2$)} \\ \hline
-%        \csvreader[
-%            separator=semicolon,
-%            head=true,
-%            late after line=\\ \hline
-%        ]{secciones/resultados/regresion-datos.csv}{}
-%        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
-%    \end{tabular}
-%\end{table}
-%
-%\paragraph{Regresión Lineal y Cálculo de $g$.}
-%Se aplica mínimos cuadrados para ajustar $T^2 = m \cdot L + b$ con $n = 4$ puntos. Las sumas necesarias son:
-%
-%$\sum x_i = 3{,}067$ m; \quad $\sum y_i = 12{,}377$ s$^2$; \quad $\sum x_i^2 = 2{,}540$ m$^2$; \quad $\sum x_i y_i = 10{,}390$ m$\cdot$s$^2$
-%
-%\textbf{Pendiente:}
-%\begin{equation*}
-%    m = \frac{4 \times 10{,}390 - 3{,}067 \times 12{,}377}{4 \times 2{,}540 - 3{,}067^2} = \frac{41{,}560 - 37{,}970}{10{,}160 - 9{,}407} = \frac{3{,}590}{0{,}753} = 4{,}127 \text{ s}^2/\text{m}
-%\end{equation*}
-%
-%\textbf{Ordenada al origen:}
-%\begin{equation*}
-%    b = \frac{12{,}377 - 4{,}127 \times 3{,}067}{4} = \frac{12{,}377 - 12{,}657}{4} = -0{,}070 \text{ s}^2
-%\end{equation*}
-%
-%\textbf{Varianza residual:} Residuos: $-0{,}016$; $+0{,}030$; $-0{,}020$; $+0{,}006$ s$^2$. $\sum \text{resid}^2 = 0{,}001436$ s$^4$. $\sigma^2 = 0{,}001436/2 = 0{,}000718$ s$^4$. $\sigma = 0{,}0268$ s$^2$.
-%
-%$S_{xx} = \sum x_i^2 - (\sum x_i)^2/n = 2{,}540 - 9{,}407/4 = 0{,}188$ m$^2$.
-%
-%\textbf{Incerteza de la pendiente:} $\Delta m = \sigma / \sqrt{S_{xx}} = 0{,}0268 / 0{,}4336 = 0{,}062 \approx 0{,}06$ s$^2$/m
-%
-%\textbf{Incerteza de la ordenada:} $\Delta b = \sigma \sqrt{\sum x_i^2 / (n \cdot S_{xx})} = 0{,}0268 \times 1{,}838 = 0{,}049 \approx 0{,}05$ s$^2$
-%
-%\textbf{Coeficiente de correlación:} $r = 0{,}9998 \;\rightarrow\; r^2 = 0{,}9996$, indicando correlación lineal excelente.
-%
-%\begin{table}[H]
-%    \centering
-%    \caption{Resultados de la regresión lineal}
-%    \label{tab:regresion-resultados}
-%    \begin{tabular}{|l|c|c|c|}
-%        \hline
-%        \textbf{Parámetro} & \textbf{Valor} & \textbf{$\Delta$} & \textbf{Unidad} \\ \hline
-%        \csvreader[
-%            separator=semicolon,
-%            head=true,
-%            late after line=\\ \hline
-%        ]{secciones/resultados/regresion-resultados.csv}{}
-%        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
-%    \end{tabular}
-%\end{table}
-%
-%\textbf{Cálculo de $g$:} $g = 4\pi^2 / m = 39{,}478 / 4{,}127 = 9{,}566$ m/s$^2$. Propagando: $\Delta g / g = \Delta m / m = 0{,}06/4{,}127 = 0{,}0145$. $\Delta g = 0{,}0145 \times 9{,}566 \approx 0{,}14 \approx 0{,}1$ m/s$^2$.
-%
-%\begin{equation*}
-%    \boxed{g = (9{,}6 \pm 0{,}1) \text{ m/s}^2}
-%\end{equation*}
+Para medir $L$ se utilizó la regla milimetrada ($\Delta L = 1 mm$).
+
+Se soltó la masa desde punto que formaba un ángulo $\theta$ con el punto de reposo.
+
+Se tomó el tiempo de 20 oscilaciones.
+
+\begin{table}[H]
+    \centering
+    \caption{Tiempos de 20 oscilaciones $t$ ($s$) en función da la longitud del hilo $L$ y la amplitud del ángulo $\theta$}
+    \label{tab:tiempos}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{$L_0$ (mm)} & $\theta = 5\textdegree$ & $\theta = 9\textdegree$ & $\theta = 15\textdegree$ & $\theta = 20\textdegree$ \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/tiempos-oscilaciones.csv}{}
+        {\textbf{\csvcoli} & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
+    \end{tabular}
+\end{table}
+
+Se calculó el período $T = \frac{t}{n}$ para cada combinación $(L, \theta)$:
+
+\begin{table}[H]
+    \centering
+    \caption{Períodos $T$ (s) calculados para cada longitud y amplitud}
+    \label{tab:periodos}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $L_0$ (mm) & $T$ ($\theta=5\textdegree$) & $T$ ($\theta=9\textdegree$) & $T$ ($\theta=15\textdegree$) & $T$ ($\theta=20\textdegree$) \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/periodos.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv}
+    \end{tabular}
+\end{table}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\subsubsection{Práctica 2 --- Cálculo de $g$ por regresión lineal}
+
+Se optó por realizar el cálculo de $g$ mediante regresión lineal de $T^2$ en función de $L$, utilizando las mediciones correspondientes a $\theta$ = 5$\textdegree$, ya que es el ángulo más pequeño y, por lo tanto, el que mejor se ajusta al modelo de péndulo ideal.
+
+\begin{table}[H]
+    \centering
+    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$\textdegree$}
+    \label{tab:regresion-datos}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{$L$ (m)} & \textbf{$T^2$ (s$^2$)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/regresion-datos.csv}{}
+        {\csvcoli & \csvcolii}
+    \end{tabular}
+\end{table}
+
+El ajuste obtenido por cuadrados mínimos fue $a(x) = 4{,}23 \cdot x -0{,}135$.
+
+El desarrollo del ajuste por cuadrados mínimos se puede encontrar en el Apéndice~\ref{subsubsec:ajuste-cuadrados-minimos-pendulo}.
+
+Igualamos la pendiente del ajuste a $\frac{4\pi^2}{g}$ y despejamos en función de $g$:
+
+\begin{equation}
+    m = \frac{4\pi^2}{g} \Longrightarrow g_0 = \frac{4\pi^2}{m}
+    \label{eq:despeje-g}
+\end{equation}
+
+Finalmente, se utiliza la pendiente obtenida y se toma pi = 3,142 para calcular $g$:
+
+\begin{equation}
+    g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3,14^2}{4{,}23} = 9{,}33 \frac{m}{s^2}
+    \label{eq:resolucion-g}
+\end{equation}
+
+\todo{
+Aca hay que hacer varias cosas, por un lado tome pi como 3,142 para tener un primer resultado, hay que justificar bien la cantidad de cifras significativas para que el error sea despreciable, lo mismo que para el volumen basicamente.
+Agregar esto al apendice y referenciarlo
+}
+
+\todo{
+Por otro lado, y donde más dudas tengo, hay que calcular el error absoluto de $g$ para poder escribirlo como $X = X_0 \pm \Delta X$.
+
+La guia presenta la siguiente formula para el error relativo de $g$:
+\begin{equation}
+    \varepsilon_g = \frac{\Delta g}{g_0} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0}
+\end{equation}
+
+Se ve tentador calcular esto y multiplicarlo por $g_o$ para obtener $\Delta g$
+
+Ponele que $\Delta L$ lo tenemos, es la minima division de la regla, $\Delta T$ tampoco es problema
+
+Pero $L_0$ por ejemplo, tenemos las 4 mediciones, 517, 730, 820, 1000, que longitud tomamos? El valor medio entre todas?
+En el volumen tenías multiples mediciones, pero lo medido era constante, entonces tenía sentido que $X_0$ sea el valor medio.
+Aca $L$ no es constante, la regresion usa todas las mediciones.
+
+El cálculo en el primer informe usaba $r$ \ref{eq:error-cuadrados-minimos-r} o $R^2$ \ref{eq:error-cuadrados-minimos-formula-R2-resolucion}, tengo que ver bien que hace y capaz es por ahi, aunque no se menciona en la guía asi que diria que no.
+}
+
+\todo{Aca hay que agregar los graficos, como minimo el de los intervalos de superposicion de las densidades con los diferentes metodos junto con los valores de referencia, y el ajuste lineal}
