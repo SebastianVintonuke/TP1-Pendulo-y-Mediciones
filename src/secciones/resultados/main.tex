@@ -322,17 +322,46 @@ Igualamos la pendiente del ajuste a $\frac{4\pi^2}{g}$ y despejamos en función 
     \label{eq:despeje-g}
 \end{equation}
 
-Finalmente, se utiliza la pendiente obtenida y se toma pi = 3,142 para calcular $g$:
+Finalmente, se utiliza la pendiente obtenida y se toma $\pi$ = 3,142 para calcular $g$:
 
 \begin{equation}
     g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3,14^2}{4{,}23} = 9{,}33 \frac{m}{s^2}
     \label{eq:resolucion-g}
 \end{equation}
 
-\todo{
-Aca hay que hacer varias cosas, por un lado tome pi como 3,142 para tener un primer resultado, hay que justificar bien la cantidad de cifras significativas para que el error sea despreciable, lo mismo que para el volumen basicamente.
-Agregar esto al apendice y referenciarlo
-}
+El desarrollo del criterio de elección de $\pi$ se puede encontrar en el Apéndice~\ref{subsubsec:criterio-eleccion-pi}.
+
+Para calcular $\varepsilon_g$, la guía sugiere la Ecuación~\ref{eq:error-relativo-periodo-pendulo-angulos-pequennos},
+sin embargo, nuestro $g_0$ se calculó a partir de la regresión lineal, es decir, no es un unico punto, por lo que tenemos multiples $L_0$ y $T_0$.
+Planteamos multiples formas de resolver esto.
+
+Por un lado, optamos por calcular $\varepsilon_g$ para cada combinación $L_0$ / $T_0$ y luego, tomar un promedio.
+El desarrollo completo de este método se puede encontrar en el Apéndice~\ref{subsubsec:calculo-error-relativo-g-promedio-regresion}.
+
+\begin{equation}
+    \varepsilon_g = 0{.}0129
+    \label{eq:error-relativo-g-promedio}
+\end{equation}
+
+El error es de un $1{,}29\%$ menor al $2\%$, por lo tanto, el resultado obtenido satisfará el criterio de precisión exigido.
+
+Finalmente, el error absoluto es:
+
+\begin{equation}
+    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{.}0129 = 0.12 \frac{m}{s^2}
+    \label{eq:incerteza-absoluta-g-promedio}
+\end{equation}
+
+Y el resultado final para $g$:
+
+\begin{equation}
+    \boxed{g = 9{,}33 \pm 0.12 \frac{m}{s^2}}
+    \label{eq:g-final}
+\end{equation}
+
+
+
+\clearpage
 
 \todo{
 Por otro lado, y donde más dudas tengo, hay que calcular el error absoluto de $g$ para poder escribirlo como $X = X_0 \pm \Delta X$.
@@ -350,5 +379,5 @@ Pero $L_0$ por ejemplo, tenemos las 4 mediciones, 517, 730, 820, 1000, que longi
 En el volumen tenías multiples mediciones, pero lo medido era constante, entonces tenía sentido que $X_0$ sea el valor medio.
 Aca $L$ no es constante, la regresion usa todas las mediciones.
 
-El cálculo en el primer informe usaba $r$ \ref{eq:error-cuadrados-minimos-r} o $R^2$ \ref{eq:error-cuadrados-minimos-formula-R2-resolucion}, tengo que ver bien que hace y capaz es por ahi, aunque no se menciona en la guía asi que diria que no.
+El cálculo en el primer informe usaba $r$ \ref{eq:error-cuadrados-minimos-r} o $R^2$ \ref{eq:error-cuadrados-minimos-formula-R2-resolucion} y los calcule en el apendice ($r = \sum_{i=0}^{k} (y_i - f(x_i))^2$) y ($R^2 = 1 - \frac{r}{\sum (y_i - \bar{y})^2}$), tengo que ver bien que hace y capaz es por ahi, aunque no se menciona en la guía.
 }

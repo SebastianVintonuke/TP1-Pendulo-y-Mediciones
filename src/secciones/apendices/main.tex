@@ -131,6 +131,48 @@ Es decir, se obtiene la Ecuación~\eqref{eq:incerteza-relativa-volumen-cilindro}
 % ####################################################################################################################
 
 \clearpage
+\subsubsection{Cálculo de $\varepsilon_g$ en función del promedio de los puntos de la regresión lineal}
+\label{subsubsec:calculo-error-relativo-g-promedio-regresion}
+
+Tomamos $\Delta L = 1$, es decir la minima división de la regla y $\Delta T = \frac{\Delta t}{n} = 0,01$, siendo $n=20$ y $\Delta t = 0{,}2$ valor asignado por la guía \cite{catedra2007pendulo}.
+
+Calculamos el $\varepsilon_g$ correspondiente a cada $L$ usado en la regresión lineal.
+
+Para $(L_0=517,T_0=1{,}4360)$:
+\begin{equation}
+    \varepsilon_{g1} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{517} + 2 \cdot \frac{0,01}{1{,}4360} = 0.0158
+    \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-1}
+\end{equation}
+
+Para $(L_0=730,T_0=1{,}7040)$:
+\begin{equation}
+    \varepsilon_{g2} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{730} + 2 \cdot \frac{0,01}{1{,}7040} = 0.0131
+    \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-2}
+\end{equation}
+
+Para $(L_0=820,T_0=1{,}8355)$:
+\begin{equation}
+    \varepsilon_{g3} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{820} + 2 \cdot \frac{0,01}{1{,}8355} = 0.0121
+    \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-3}
+\end{equation}
+
+Para $(L_0=1000,T_0=2{,}0220)$:
+\begin{equation}
+    \varepsilon_{g4} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{1000} + 2 \cdot \frac{0,01}{2{,}0220} = 0.0108
+    \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-4}
+\end{equation}
+
+Calculamos el promedio:
+
+\begin{equation}
+    \varepsilon_{g} = \frac{0.0158 + 0.0131 + 0.0121 + 0.0108}{4} = 0.0129
+    \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-prom}
+\end{equation}
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
 \subsubsection{Criterio de elección de $\pi$}
 \label{subsubsec:criterio-eleccion-pi}
 
@@ -171,6 +213,25 @@ Se requiere $\varepsilon_\pi < 0,09$.
             head=true,
             late after line=\\ \hline
         ]{secciones/apendices/eleccion-pi-regla.csv}{}
+        {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
+    \end{tabular}
+\end{table}
+
+En el caso del pendulo ideal $10 \cdot \varepsilon_\pi < \,\varepsilon_L + 2 \varepsilon_T = 0.0129$, dado por la Ecuación \ref{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-prom}.
+
+Se requiere $\varepsilon_\pi < 0,0129$.
+
+\begin{table}[H]
+    \centering
+    \label{tab:eleccion-pi-pendulo}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0.0129$ \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/apendices/eleccion-pi-pendulo.csv}{}
         {\csvcoli & \csvcolii & \csvcoliii & \csvcoliv}
     \end{tabular}
 \end{table}
