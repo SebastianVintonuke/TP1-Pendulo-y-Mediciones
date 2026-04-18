@@ -418,14 +418,14 @@ Con el objetivo de validar nuestro desarrollo manual, se decidió calcular coefi
     \label{eq:error-cuadrados-minimos-formula-R2}
 \end{equation}
 
-Calculamos el promedio $\bar{y}$:
+Calculamos el promedio de los valores:
 
 \begin{equation}
     \bar{y} = \frac{1}{n} \sum y_i = \frac{2{,}0620 + 2{,}9036 + 3{,}3690 + 4{,}0884}{4} = 3{,}10575
     \label{eq:error-cuadrados-minimos-promedio-para-R2}
 \end{equation}
 
-Calculamos la sumatoria del denominador:
+Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y el promedio:
 
 \begin{equation}
     \sum (y_i - \bar{y})^2 =
@@ -451,20 +451,50 @@ Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho 
 % ####################################################################################################################
 
 \clearpage
-\subsubsection{Contestación de preguntas de la guía experimental}
+\subsubsection{Preguntas de la guía experimental}
 \label{subsubsec:contestacion-preguntas-guia}
 
 \paragraph{Práctica 1 --- Criterios de Recorte y Precisión}
 \begin{itemize}
     \item El caso del número $\pi$: ¿Cuántos decimales se le deben asignar al número $\pi$ para que el error cometido por el recorte sea despreciable frente al error de las mediciones directas?
+
+    \respuesta{
+        Para el calibre, se adoptó $\pi = 3,142$ (3 decimales) ya que cumple el criterio $10 \cdot \varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
+        Para la regla milimetrada, se adoptó $\pi = 3,14$ (2 decimales) ya que cumple el mismo criterio.
+        El desarrollo se puede encontrar en el Apéndice \ref{subsubsec:criterio-eleccion-pi}.
+    }
+
     \item Defina y justifique el criterio utilizado para llamar a un error ``despreciable'' (por ejemplo: que sea 10, 50 o 100 veces menor que la menor de las incertezas medidas).
+
+    \respuesta{
+        Se adopta como criterio considerar despreciable todo error al menos un orden de magnitud menor que la menor incertidumbre medida, ya que en esas condiciones su contribución a la incertidumbre total es insignificante frente a las fuentes de error dominantes, y no afecta de manera apreciable el resultado final.
+    }
 \end{itemize}
 
 \paragraph{Práctica 1 --- Análisis de Resultados y Conclusiones}
 \begin{itemize}
     \item Compare los valores de densidad obtenidos mediante los tres métodos (calibre, regla milimetrada y probeta graduada). ¿Se superponen sus rangos de incerteza?
+
+    \respuesta{
+        Si, los rangos de incertidumbre de los tres metodos se superponen.
+        Además, los rangos están contenidos entre ellos.
+    }
+
     \item Represente gráficamente los intervalos sobre la recta real. En base a esto: ¿Son las mediciones comparables entre sí? (Es decir, ¿existe una franja de intersección no nula entre todas las bandas de incerteza?).
+
+    \respuesta{
+        Si, son comparables, la maxima franja de interseccion entre los tres metodos es igual al rango del calibre, como se puede ver en la Figura \ref{fig:grafico-intervalos}.
+    }
+
     \item Tras buscar los valores tabulados para la densidad del latón y del bronce en manuales técnicos: ¿Es posible decidir con seguridad de qué material está construido el cilindro utilizado en la práctica? Justifique su respuesta comparando los intervalos medidos con los valores de tabla.
+
+    \respuesta{
+        La densidad de referencia más consistente es la de la constante de las pesas de latón $8,4 \frac{g}{cm^3}$.
+        Esta, está evidentemente contenida en el rango mas general del laton.
+        El bronce se encuentra fuera del rango del calibre, por lo que podemos descartarlo.
+        Si por el contrario, solo dispusieramos de los resultados de la regla milimetrada o la probeta no podríamos hacerlo, ya que, sus rangos de incertidumbre sí lo contienen.
+        Las densidades de referencia fueron obtenidas de \cite{kayelaby1911}, pág. 20.
+    }
 \end{itemize}
 
 % ####################################################################################################################
@@ -473,23 +503,57 @@ Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho 
 \paragraph{Práctica 2 --- Análisis del Modelo Teórico}
 \begin{itemize}
     \item Dada la solución $x(t) = A_0 \text{sen}(\omega t + \varphi_0)$ para un movimiento armónico simple: ¿Cuáles son las variables en la ecuación y cuáles los parámetros?
+
+    \todo{Responder}
+
     \item ¿Cuáles de los parámetros son característicos del sistema oscilante y cuáles dependen de un agente externo?
+
+    \todo{Responder}
+
     \item Verifique que la ecuación anterior es solución de la ecuación diferencial del movimiento $a = \frac{d^2x}{dt^2} = -\omega^2x$ e indique otra solución posible.
+
+    \todo{Responder}
+
     \item A partir de las leyes de Newton para un péndulo ideal, halle la ecuación diferencial:
     \[ \frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta) \]
     Especifique el sistema de coordenadas utilizado para su obtención.
+
+    \todo{Responder}
+
     \item Al realizar la aproximación para ángulos pequeños ($\text{sen}(\theta) \cong \theta$), la ecuación se reescribe como $\frac{d^2\theta}{dt^2} = -\frac{g}{L}\theta$. ¿A qué tipo de movimiento corresponde? Escriba una posible solución $\theta(t)$.
+
+    \todo{Responder}
 \end{itemize}
 
 \paragraph{Práctica 2 --- Diseño Experimental y Procedimiento}
 \begin{itemize}
     \item Considerando los elementos disponibles (cinta métrica, calibre, cronómetro manual): ¿Podemos esperar obtener un valor de $g$ con un error menor al 2\%?
+
+    \todo{Responder}
+
     \item En base al Anexo 1 (Análisis de dependencias del período):
     \begin{itemize}
         \item ¿Depende el período de la amplitud de oscilación? Analice tanto para amplitudes grandes como pequeñas.
+
+        \respuesta{
+            Para amplitudes pequeñas (donde rige la aproximación $\sen \theta \approx \theta$), la Ecuación \ref{eq:periodo-pendulo-angulos-pequennos} indica que el período es independiente de la amplitud.
+            Para amplitudes grandes, la aproximación ideal deja de ser válida y el período sí depende del ángulo inicial, como se ve en la Ecuación \ref{eq:periodo_real}.
+        }
+
         \item ¿Depende el período de la masa del cuerpo suspendido?
+
+        \respuesta{
+            En el modelo teórico del péndulo ideal, que asume una masa puntual sin volumen, el período no depende del valor de la masa.
+            Sin embargo, dado que en el experimento real no se usó una masa puntual sino una esfera de aproximadamente $1,7 cm$ de radio, la distribución de esa masa afecta la inercia.
+            Por eso, la guía plantea una corrección con la Ecuación \ref{eq:periodo-pendulo-angulos-pequennos-corregido}.
+        }
+
         \item ¿Depende el período de la longitud del hilo?
+
+        \respuesta{
+            Sí, existe una dependencia directa y fundamental con la longitud del hilo.
+            Se puede ver en la Ecuación \ref{eq:periodo-pendulo-angulos-pequennos} y en los resultados empíricos mostrados en la Tabla \ref{tab:periodos}.
+        }
     \end{itemize}
 \end{itemize}
 
-\todo{Recopile las preguntas que aparecen en ambas guías, los criterios de entrega especifican que las respuestas deben estar en el apéndice, algunas de estas preguntas ya se responden en otros lugares, habría que verlas una por una y responderlas.}
