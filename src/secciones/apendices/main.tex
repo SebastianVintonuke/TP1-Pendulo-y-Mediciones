@@ -42,7 +42,7 @@ Obtenemos que la incerteza absoluta de la densidad es:
     \label{eq:incerteza-final}
 \end{equation}
 
-Usando $\varepsilon_x = \Delta X / X_0$ como definición de incerteza o error relativo.
+Usando $\varepsilon_x = \frac{\Delta X}{X_0}$ como definición de incerteza o error relativo.
 
 Aplicándolo a nuestro resultado, la incerteza relativa de la densidad es:
 
@@ -109,7 +109,7 @@ Obtenemos que la incerteza absoluta del volumen de un cilindro es:
     \label{eq:incerteza-final-volumen}
 \end{equation}
 
-Usando $\varepsilon_x = \Delta X / X_0$ como definición de incerteza o error relativo.
+Usando $\varepsilon_x = \frac{\Delta X}{X_0}$ como definición de incerteza o error relativo.
 
 Aplicándolo a nuestro resultado, la incerteza relativa del volumen de un cilindro es:
 
@@ -126,6 +126,67 @@ Simplificando:
 \end{equation}
 
 Es decir, se obtiene la Ecuación~\eqref{eq:incerteza-relativa-volumen-cilindro} presentada en la introducción.
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Propagación de errores mediante derivadas parciales para la gravedad en función de la pendiente de la regresión lineal}
+\label{subsubsec:propagacion-errores-g-a-partir-de-la-pendiente}
+
+
+Partiendo de la expresión de la gravedad en función de la pendiente $m$ de la regresión lineal:
+
+\begin{equation}
+    g(m, \pi) = \frac{4\pi^2}{m}
+    \label{eq:funcion-gravedad-pendiente}
+\end{equation}
+
+Aplicamos la fórmula para incerteza absoluta de una función de varias variables:
+
+\begin{equation}
+    \Delta g = \left| \frac{\partial g}{\partial m} \right| \Delta m + \left| \frac{\partial g}{\partial \pi} \right| \Delta \pi
+    \label{eq:incerteza-general-gravedad-pendiente}
+\end{equation}
+
+Derivada respecto a la pendiente $m$, asumiendo $\pi$ como constante:
+
+\begin{equation}
+    \frac{\partial g}{\partial m} = -\frac{4\pi^2}{m^2}
+    \label{eq:derivada-pendiente}
+\end{equation}
+
+Derivada respecto a $\pi$, asumiendo $m$ como constante:
+
+\begin{equation}
+    \frac{\partial g}{\partial \pi} = \frac{8\pi}{m}
+    \label{eq:derivada-pi-gravedad}
+\end{equation}
+
+Obtenemos que la incerteza absoluta de la gravedad es:
+
+\begin{equation}
+    \Delta g = \frac{4\pi^2}{m_0^2} \Delta m + \frac{8\pi}{m_0} \Delta \pi
+    \label{eq:incerteza-final-gravedad}
+\end{equation}
+
+Usando $\varepsilon_x = \frac{\Delta X}{X_0}$ como definición de incerteza o error relativo.
+
+Aplicándolo a nuestro resultado, la incerteza relativa de la gravedad es:
+
+\begin{equation}
+    \frac{\Delta g}{g_0} = \frac{\frac{4\pi^2}{m_0^2} \Delta m}{\frac{4\pi^2}{m_0}} + \frac{\frac{8\pi}{m_0} \Delta \pi}{\frac{4\pi^2}{m_0}}
+    \label{eq:incerteza-relativa-desarrollo-gravedad}
+\end{equation}
+
+Simplificando:
+
+\begin{equation}
+    \frac{\Delta g}{g_0} = \frac{\Delta m}{m_0} + \frac{2\Delta \pi}{\pi}
+    \label{eq:incerteza-relativa-simplificada-gravedad}
+\end{equation}
+
+Dado que $\Delta \pi$ es despreciable según el criterio adoptado en el Apéndice~\ref{subsubsec:criterio-eleccion-pi}, se obtiene la Ecuación~\eqref{eq:incerteza-absoluta-g-pendiente} presentada en los resultados.
 
 % ####################################################################################################################
 % ####################################################################################################################
@@ -472,6 +533,32 @@ Finalmente, obtenemos el error cuadrático total $r$:
     \label{eq:error-cuadrados-minimos-r}
 \end{equation}
 
+Adicionalmente, calculamos la dispersión como $d = \sum (x_i - \bar{x})^2$:
+
+Calculamos el promedio de los valores:
+
+\begin{equation}
+    \bar{x} = \frac{1}{n} \sum x_i = \frac{0,517 + 0,730 + 0,820 + 1,000}{4} = 0.76675
+    \label{eq:dispersion-cuadrados-minimos-r-promedio}
+\end{equation}
+
+Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y el promedio:
+
+\begin{equation}
+    d =
+    (0,517 - \bar{x})^2 +
+    (0,730 - \bar{x})^2 +
+    (0,820 - \bar{x})^2 +
+    (1,000 - \bar{x})^2
+    = 0.12096675
+    \label{eq:dispersion-cuadrados-minimos-r}
+\end{equation}
+
+
+% ####################################################################################################################
+% ####################################################################################################################
+\clearpage
+
 Con el objetivo de validar nuestro desarrollo manual, se decidió calcular coeficiente de correlación $R^2$ a fin de comparar el resultado con el valor obtenido mediante una planilla de cálculo.
 
 \begin{equation}
@@ -590,7 +677,11 @@ Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho 
 \begin{itemize}
     \item Considerando los elementos disponibles (cinta métrica, calibre, cronómetro manual): ¿Podemos esperar obtener un valor de $g$ con un error menor al 2\%?
 
-    \todo{Responder}
+    \respuesta{
+        Si, perfectamente. La mayor fuente de incerteza está asociado al accionar humano del cronómetro, $\Delta t = 0{,}2$.
+        Podemos reducir el mismo al tomar intervalos más grandes y dividir por la cantidad de oscilaciones $\Delta T = \frac{\Delta t}{n}$, con $n=20$, satisfacemos el criterio esperado.
+        Destacar que no podriamos conseguir una precision infinita, un intervalo más grande además implica exponer el pendulo más tiempo a factores externos, como por ejemplo el rozamiento con el aire.
+    }
 
     \item En base al Anexo 1 (Análisis de dependencias del período):
     \begin{itemize}

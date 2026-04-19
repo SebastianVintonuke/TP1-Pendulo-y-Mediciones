@@ -325,7 +325,7 @@ Igualamos la pendiente del ajuste a $\frac{4\pi^2}{g}$ y despejamos en función 
 Finalmente, se utiliza la pendiente obtenida y se toma $\pi$ = 3,142 para calcular $g$:
 
 \begin{equation}
-    g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3,14^2}{4{,}23} = 9{,}33 \frac{m}{s^2}
+    g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3,142^2}{4{,}23} = 9{,}33 \frac{m}{s^2}
     \label{eq:resolucion-g}
 \end{equation}
 
@@ -359,25 +359,43 @@ Y el resultado final para $g$:
     \label{eq:g-final}
 \end{equation}
 
+Otro camino para calcular $\varepsilon_g$ es partir de la Ecuación \ref{eq:despeje-g} y aplicar la propagación de errores mediante derivadas parciales.
 
-
-\clearpage
-
-\todo{
-Por otro lado, y donde más dudas tengo, hay que calcular el error absoluto de $g$ para poder escribirlo como $X = X_0 \pm \Delta X$.
-
-La guia presenta la siguiente formula para el error relativo de $g$:
 \begin{equation}
-    \varepsilon_g = \frac{\Delta g}{g_0} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0}
+    \varepsilon_g = \frac{\Delta g}{g_0} = \frac{\Delta m}{m_0}
+    \label{eq:incerteza-absoluta-g-pendiente}
 \end{equation}
 
-Se ve tentador calcular esto y multiplicarlo por $g_o$ para obtener $\Delta g$
+El desarrollo completo se puede encontrar en el Apéndice~\ref{subsubsec:propagacion-errores-g-a-partir-de-la-pendiente}.
 
-Ponele que $\Delta L$ lo tenemos, es la minima division de la regla, $\Delta T$ tampoco es problema
+Para calcular $\Delta m$ utilizaremos la siguiente fórmula para el error estándar de la pendiente.
 
-Pero $L_0$ por ejemplo, tenemos las 4 mediciones, 517, 730, 820, 1000, que longitud tomamos? El valor medio entre todas?
-En el volumen tenías multiples mediciones, pero lo medido era constante, entonces tenía sentido que $X_0$ sea el valor medio.
-Aca $L$ no es constante, la regresion usa todas las mediciones.
+\begin{equation}
+    \Delta m = \sqrt{ \frac{r}{(n-2)d} } = \sqrt{ \frac{0{,}003800839135}{(4-2) \cdot 0{,}12096675} } = 0{,}1253405917
+    \label{eq:incerteza-absoluta-m}
+\end{equation}
 
-El cálculo en el primer informe usaba $r$ \ref{eq:error-cuadrados-minimos-r} o $R^2$ \ref{eq:error-cuadrados-minimos-formula-R2-resolucion} y los calcule en el apendice ($r = \sum_{i=0}^{k} (y_i - f(x_i))^2$) y ($R^2 = 1 - \frac{r}{\sum (y_i - \bar{y})^2}$), tengo que ver bien que hace y capaz es por ahi, aunque no se menciona en la guía.
-}
+Siendo $r$ la suma de los residuos al cuadrado, $d$ la dispersion y $n$ el número de puntos.
+
+El desarrollo completo del cálculo de $r$ y $d$ se pueden encontrar en Apéndice~\ref{subsubsec:ajuste-cuadrados-minimos-pendulo}.
+
+\begin{equation}
+    \varepsilon_g = \frac{\Delta m}{m_0} = \frac{0{,}1253405917}{4,227002475} = 0{,}02965235825
+    \label{eq:error-relativo-g-pendiente}
+\end{equation}
+
+El error es de un 2,96 \% mayor al 2 \%, por lo tanto, el resultado obtenido no satisfará el criterio de precisión exigido.
+
+Finalmente, el error absoluto es:
+
+\begin{equation}
+    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{,}02965235825 = 0.12 \frac{m}{s^2}
+    \label{eq:incerteza-absoluta-g-pendiente-resultado}
+\end{equation}
+
+Y el resultado final para $g$:
+
+\begin{equation}
+    \boxed{g = 9{,}33 \pm 0.2766 \frac{m}{s^2}}
+    \label{eq:g-final-pendiente}
+\end{equation}
