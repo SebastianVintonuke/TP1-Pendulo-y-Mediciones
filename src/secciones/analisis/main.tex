@@ -58,32 +58,31 @@ El calibre proporcionó la medición más precisa, mientras que la regla y la pr
 % ####################################################################################################################
 
 \subsubsection{Práctica 2 - Pendulo Ideal}
-\todo{Terminar}
-\textbf{Resultado de $g$ y Comparación con Valor de Referencia:}
 
-%\textbf{Valor obtenido:} $g = (9{,}6 \pm 0{,}1)$ m/s$^2$.
+\subsubsection{Resultado de $g$ y Comparación con Valor de Referencia:}
 
-\textbf{Valor de referencia en Buenos Aires:} $g_{\text{ref}} \approx 9{,}797$ m/s$^2$.
-%Discrepancia: $|9{,}57 - 9{,}80| \approx 0{,}23$ m/s$^2$, que representa un $2{,}4\%$ del valor de referencia.
+Tras realizar un ajuste con 12 puntos (correspondientes a $\theta$ = 5$\textdegree$, 9$\textdegree$ y 15$\textdegree$), y aplicando el error de la pendiente del ajuste, se obtuvo como resultado $g = 9{,}579 \pm 0.255 \frac{m}{s^2}$.
 
-%\textbf{Compatibilidad:} El valor de referencia ($9{,}797$ m/s$^2$) queda fuera del intervalo experimental $[9{,}5;\; 9{,}7]$ m/s$^2$.
-%Esto sugiere la presencia de errores sistemáticos.
+\textbf{Valor de referencia en Buenos Aires:} $g_{\text{ref}} = 9{,}797 \frac{m}{s^2}$.
+
+El valor de referencia se encuentra dentro del intervalo de indeterminación del resultado obtenido ($9{,}834 \frac{m}{s^2}$, $9{,}324 \frac{m}{s^2}$) lo que indica que el resultado es compatible con el valor de referencia.
 
 \subsubsection{Práctica 2 - Análisis de Fuentes de Error}
 
 \paragraph{Práctica 2}
 \begin{itemize}
-%    \item \textbf{Error de reacción humana en el cronómetro:} principal error accidental. Se estima en $\pm$0,1--0,2 s por accionamiento.
-%                  Al medir 20 oscilaciones se acumula $\sim$$\pm$0,3 s en $t_{20}$, equivalente a $\Delta T \approx \pm 0{,}015$ s en $T$.
-    \item \textbf{Movimiento no plano (movimiento cónico):} si la esfera oscila en un cono en lugar de un plano, el período medido difiere del del péndulo plano.
-%    \item \textbf{Ordenada al origen no nula ($b \approx -0{,}07$ s$^2$):} el modelo ideal predice $b = 0$.
-%                  El valor negativo puede deberse a errores sistemáticos en la medición de $L$ o del tiempo.
+    \item \textbf{Movimiento no plano (movimiento cónico):} si la esfera oscila en un cono en lugar de un plano, el período medido difiere del péndulo plano.
+    \item \textbf{Masa no puntual:} El modelo asume una masa puntual, pero se utilizó una esfera de 1,7 $cm$ de radio.
+    \item \textbf{Amplitudes grandes:} Para ángulos mayores a 5$\textdegree$ (especialmente el de 15$\textdegree$ incluido en el cálculo final), la aproximación $\sen \theta \approx \theta$ pierde validez, introduciendo un error sistemático.
 \end{itemize}
 
 \subsubsection{Práctica 2 - Conclusiones}
 
-%Para el péndulo, se verificó experimentalmente que el período es independiente de la amplitud para los ángulos ensayados ($\leq 20°$), en acuerdo con el modelo del péndulo ideal.
-%La relación lineal entre $T^2$ y $L$ se confirmó con $r^2 = 0{,}9996$.
-%El valor de $g$ obtenido, $(9{,}6 \pm 0{,}1)$ m/s$^2$, presenta una discrepancia de $\sim$2,4\% respecto al valor de referencia local, atribuible principalmente a la incerteza en la medición de la longitud efectiva del péndulo y al error de reacción del cronómetro.
+Se logró determinar de forma experimental la aceleración de la gravedad mediante el estudio de un péndulo simple.
 
-Ambas prácticas ilustraron la importancia de la propagación correcta de incertezas, la elección del valor representativo, y la expresión de los resultados como $valor \pm incerteza [unidades]$.
+A lo largo del desarrollo, se exploró no solo la obtención de un valor numérico para la aceleración de la gravedad, sino también la validez de los procesos aplicados.
+Se propusieron y discutieron diversos métodos y criterios para el cálculo a partir de los datos, lo que nos permitió evaluar diferentes resultados junto con sus implicaciones.
+
+Si bien el primer método de cálculo para la incerteza basado en mediciones individuales arrojó un error menor ($1,29\%$), se concluyó que el método basado en el error de la pendiente de la regresión lineal ($2,67\%$) es más apropiado para representar la calidad del ajuste al modelo teórico.
+
+Para concluir, ambas prácticas ilustraron la importancia de la propagación correcta de incertezas, la elección del valor representativo, y la expresión de los resultados como $valor \pm incerteza [unidades]$.

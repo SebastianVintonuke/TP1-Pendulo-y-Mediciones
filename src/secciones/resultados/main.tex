@@ -389,7 +389,7 @@ El error es de un 2,96 \% mayor al 2 \%, por lo tanto, el resultado obtenido no 
 Finalmente, el error absoluto es:
 
 \begin{equation}
-    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{,}02965235825 = 0.12 \frac{m}{s^2}
+    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{,}02965235825 = 0.2766 \frac{m}{s^2}
     \label{eq:incerteza-absoluta-g-pendiente-resultado}
 \end{equation}
 
@@ -399,3 +399,58 @@ Y el resultado final para $g$:
     \boxed{g = 9{,}33 \pm 0.2766 \frac{m}{s^2}}
     \label{eq:g-final-pendiente}
 \end{equation}
+
+El primer método para el cálculo de $\Delta g$ representa la propagación de los errores de las mediciones, el segundo camino, representa el error de ajuste con respecto al modelo teórico ideal.
+Dado que $g_0$ proviene del resultado de la aproximación lineal de los puntos, consideramos que el primer método es erróneo y que es más apropiado el segundo.
+
+Sin embargo, este no satisface los criterios de precisión necesarios y además ambos son resultados considerablemente malos, ya que el valor de gravedad de referencia para la provincia de Buenos Aires es $9,79 \frac{m}{s^2}$.
+Atribuimos esto a que una aproximación tiene pocos puntos.
+
+Decidimos realizar otra aproximación lineal usando más datos independientemente del ángulo inicial, esto no es del todo incorrecto, ya que la fórmula ideal no depende del ángulo inicial.
+Sin embargo, los puntos correspondientes a ángulos más grandes introducirán errores mayores, ya que el sistema se comportará de forma más impredecible para nuestro modelo ideal.
+Por esta razón decidimos excluir $\theta=20\textdegree$, y estimamos que para el resto de ángulos el error introducido por este factor será menor al error actual derivado de la falta de datos.
+
+\begin{table}[H]
+    \centering
+    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$\textdegree$, 9$\textdegree$ y 15$\textdegree$}
+    \label{tab:regresion-datos-2}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{$L$ (m)} & \textbf{$T^2$ (s$^2$)} \\ \hline
+        \csvreader[
+            separator=semicolon,
+            head=true,
+            late after line=\\ \hline
+        ]{secciones/resultados/regresion-datos-2.csv}{}
+        {\csvcoli & \csvcolii}
+    \end{tabular}
+\end{table}
+
+Para la aproximación lineal de 12 puntos, utilizamos directamente una herramienta de cálculo.
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados de la regresión lineal para $\theta$ = 5$\textdegree$, 9$\textdegree$ y 15$\textdegree$}
+    \label{tab:regresion-2-resultados}
+    \begin{tabular}{|c|c|}
+        \hline
+        \csvreader[
+            separator=semicolon,
+            no head,
+            late after line=\\ \hline
+        ]{secciones/resultados/regresion-2-resultados.csv}{1=\campoA, 2=\campoB}
+        {\campoA & \campoB}
+    \end{tabular}
+\end{table}
+
+Finalmente, el resultado obtenido.
+
+\begin{equation}
+    \boxed{g = 9{,}579 \pm 0.255 \frac{m}{s^2}}
+    \label{eq:g-final-2}
+\end{equation}
+
+\todo {
+    La planilla de calculo que use por si a alguno le sirve:
+    \href{https://docs.google.com/spreadsheets/d/1xTJ3zCI_2WQi6waleFT5TWLrO1mGyb-Q2LFFuYYY280/edit?usp=sharing}{url}
+}
