@@ -652,25 +652,51 @@ Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho 
 \begin{itemize}
     \item Dada la solución $x(t) = A_0 \text{sen}(\omega t + \varphi_0)$ para un movimiento armónico simple: ¿Cuáles son las variables en la ecuación y cuáles los parámetros?
 
-    \todo{Responder}
+    \respuesta{Las variables de la ecuación son: el tiempo $t$ y la posición en función del tiempo $x(t)$; la primera siendo la variable independiente y la segunda la variable dependiente que representa la posición de la masa puntual respecto al punto de equilibrio. Los parámetros que definen las propiedades específicas del movimiento del sistema físico en cuestión son: la amplitud $A_0$, que representa la máxima elongación ; la fase inicial $\varphi_0$, que ajusta la ecuación para reflejar las condiciones físicas del movimiento para $t=0$; la frecuencia angular $\omega =\frac{2\pi}{T}$  que representa la velocidad de cambio de fase.}
 
     \item ¿Cuáles de los parámetros son característicos del sistema oscilante y cuáles dependen de un agente externo?
 
-    \todo{Responder}
+    \respuesta{La amplitud $A_0$ y la fase inicial $\varphi_0$ se asocian a las condiciones iniciales del sistema impuestos por un agente externo mientras que la frecuencia angular $\omega$ se  vincula a las propiedades físicas del sistema oscilante en sí. }
 
     \item Verifique que la ecuación anterior es solución de la ecuación diferencial del movimiento $a = \frac{d^2x}{dt^2} = -\omega^2x$ e indique otra solución posible.
 
-    \todo{Responder}
+    \respuesta{Para verificar que la ecuación dada es solución a la ecuación diferencial calculamos la segunda derivada de la posición respecto al tiempo y verificar que es coherente con la ecuación diferencial propuesta:}
+    
+    \respuesta{Sea $x(t) = A_0 \text{sen}(\omega t + \varphi_0)\Longrightarrow \frac{dx}{dt}= A_0\omega \cos(\omega t + \varphi_0)$ al aplicar la regla de la cadana. Así mismo $\frac{d^2x}{dt^2}= -A_0\omega^2 \text{sen}(\omega t + \varphi_0)$ que al identificar que un factor de la ecuación es exactamente  $A_0\text{sen}(\omega t+ \varphi_0)$ lo podemos sustituir con la ecuación propuesta que describe la posición, es decir $\frac{d^2x}{dt^2}= -\omega^2x]$ que es exactamente la ecuación diferencial que delimita el comportamiento del movimiento.}
+    
+    \respuesta{Otra posible solución se obtiene a partir de la descripción matemática de la misma solución pero empleando el operador $cos$ en vez de $\text{sen}$, para introducir el comportamiento oscilatorio, y empleando un desfaz diferente para que matemáticame las posiciones coincidan para un mismo $t$ dado el desfaz incertado por cambiar de operador ($\cos(\alpha) = \text{sen}\left(\alpha + \frac{\pi}{2}\right)$), esta solución sería $x(t) = A_0 \cos(\omega t + \phi_0)$.}
 
     \item A partir de las leyes de Newton para un péndulo ideal, halle la ecuación diferencial:
     \[ \frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta) \]
     Especifique el sistema de coordenadas utilizado para su obtención.
 
-    \todo{Responder}
+    \respuesta{Definimos un sistema de coordenadas polares $(\hat{r}, \hat{\theta})$ con el origen en el punto de pivote, el eje radial en la dirección del hilo y el eje tangencial perpendicular al hilo en la dirección del crecimiento del ángulo $\theta$. Las fuerzas sobre la masa $m$ son la tensión $\vec{F_T}$, siempre en el eje radial hacia el pivote ($-\hat{r}$), y el peso $\vec{P}=m\vec{g}$ que siempre actua hacia 'abajo'. Representaremos las componentes del peso como $\vec{P}_r$ en el eje radial y $\vec{P}_{\theta}$ en el eje tangencial, análogamente la notación para las componentes de la acelaración son $\vec{a_r}$ y $\vec{a_\theta}$, donde $\vec{a_r}=0$ puesto que el movimiento solo se realiza en el eje tangencial.}
+
+    \respuesta{Descomponiendo el sistema de ecuaciones en los dos ejes (radiales y tangenciales) y sabiendo que la aceleración tangencial para un radio $r$ es $\vec{a_\theta}(t)=r\frac{d^2\theta}{dt^2}\hat{\theta}$, obtenemos:
+    \begin{equation}
+        \begin{cases}
+             \vec{P_r}-\vec{F_T}=\vec{0}\\
+             \vec{P_{\theta}}=m\vec{a_\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -m\vec{g}\text{ sen}(\theta)=m\vec{a_\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -\vec{g}\text{ sen}(\theta)=L\frac{d^2\theta}{dt^2}\hat{\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -\frac{\vec{g}}{L}\text{ sen}(\theta)=\frac{d^2\theta}{dt^2}\hat{\theta}
+        \end{cases}
+    \end{equation}
+    Donde el módulo de la última ecuación en el eje tangencial nos confirma exactamente la ecuación diferencial planteada en la consigna $\frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta)$
+    }
 
     \item Al realizar la aproximación para ángulos pequeños ($\text{sen}(\theta) \cong \theta$), la ecuación se reescribe como $\frac{d^2\theta}{dt^2} = -\frac{g}{L}\theta$. ¿A qué tipo de movimiento corresponde? Escriba una posible solución $\theta(t)$.
 
-    \todo{Responder}
+    \respuesta{La ecuación describe un \textit{movimiento armónico simple (MAS)}. }
 \end{itemize}
 
 \paragraph{Práctica 2 --- Diseño Experimental y Procedimiento}
