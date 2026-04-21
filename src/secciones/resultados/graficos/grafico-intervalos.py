@@ -6,7 +6,7 @@ data = [
     {"nombre": "Latón ordinario", "min": 8.4, "max": 8.7},
     {"nombre": "Probeta graduada", "min": 7.4, "max": 9.22},
     {"nombre": "Regla milimetrada", "min": 7.61, "max": 9.11},
-    {"nombre": "Calibre", "min": 8.275, "max": 8.405},
+    {"nombre": "Calibre", "min": 8.275, "max": 8.40},
 ]
 
 spacing = 1
