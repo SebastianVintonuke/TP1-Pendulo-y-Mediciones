@@ -594,6 +594,91 @@ Finalmente:
 
 \todo{En todos los calculos del ajuste por cuadrados mínimos usé tantos digitos como la calculadora me dio, la idea era evitar ir acumulando errores de redondeo, de hecho el resultado me quedo clavado con el Google Sheets, pero queda verboso y se lee feo, habria que adoptar una convencion y redondear todos los valores intermedios.
 Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho con IA, al ser predictivas, no pueden mantener consistentemente tantos digitos significativo (problema que tenía la primera resolucion)}
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Desarrollo de la verifcación de la solución a la ecuación diferencial de segundo orden que describe un movimiento armónico simple}
+\label{subsubsec:verifiacion-solucion-edo-MAS}
+Sea la ecuación 
+\begin{equation}
+   x(t) = A_0 \text{sen}(\omega t + \varphi_0) 
+\end{equation}
+
+Podemos verificar que es solución a la ecuación diferencial de segundo orden que describe un \textit{M.A.S.} calculando su derivada segunda y viendo si cumple con la ecuación propia de dicho movimiento. 
+
+Vemos que, aplicando la regla de la cadena, la primera deriva es
+\begin{equation}
+    \frac{dx}{dt}= A_0\omega \cos(\omega t + \varphi_0)
+\end{equation}
+ 
+ Así entonces, la segunda derivada es
+ \begin{equation}
+     \frac{d^2x}{dt^2}= -A_0\omega^2 \text{sen}(\omega t + \varphi_0)
+ \end{equation}
+ 
+ De esta última ecuación podemos identificar el factor $A_0\text{sen}(\omega t+ \varphi_0)$ que se puede reemplazar con $x(t)$, es decir:
+\begin{equation}
+    \frac{d^2x}{dt^2}= -\omega^2x
+\end{equation} 
+
+% ####################################################################################################################
+% ####################################################################################################################
+
+\clearpage
+\subsubsection{Deducción de la ecuación diferencial de segundo orden para un péndulo ideal a partir de las leyes de Newton}
+\label{subsubsec:deduccion-edo-pendulo-ideal}
+
+Definimos un sistema de coordenadas polares $(\hat{r}, \hat{\theta})$ con el origen en el punto de pivote, el eje radial en la dirección del hilo y el eje tangencial perpendicular al hilo en la dirección del crecimiento del ángulo $\theta$. 
+
+Las fuerzas ejercidas sobre la masa $m$ son: La tensión $\vec{F_T}$ y el peso $\vec{P}$. La tensión que solo actua en el eje radial hacia el pivote ($-\hat{r}$), es decir:
+\begin{equation}
+    \vec{F_T}=F_T \cdot\hat{\theta}
+\end{equation}
+
+Y el peso que siempre actua hacia 'abajo':
+\begin{equation}
+    \vec{P}=m\vec{g}
+\end{equation}
+
+
+Representaremos las componentes del peso como $\vec{P}_r$ en el eje radial y $\vec{P}_{\theta}$ en el eje tangencial, análogamente la notación para las componentes de la acelaración son $\vec{a_r}$ y $\vec{a_\theta}$. Es decir:
+\begin{equation}
+    \begin{cases}
+        \vec{P}=\vec{P}_r+\vec{P}_{\theta}\\
+        \vec{a}= \vec{a_r} + \vec{a_\theta}
+    \end{cases}
+\end{equation}
+
+En el caso del péndulo simple el movimiento solo se realiza en el eje tangencial por lo que tambien tendremos en cuenta que:
+\begin{equation}
+    \vec{a_r}=0
+\end{equation}
+
+Descomponiendo el sistema de ecuaciones en los dos ejes (radiales y tangenciales) y sabiendo que la aceleración tangencial para un radio $r$ es $\vec{a_\theta}(t)=r\frac{d^2\theta}{dt^2}\hat{\theta}$, obtenemos:
+\begin{equation}
+        \begin{cases}
+             \vec{P_r}-\vec{F_T}=\vec{0}\\
+             \vec{P_{\theta}}=m\vec{a_\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -m\vec{g}\text{ sen}(\theta)=m\vec{a_\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -\vec{g}\text{ sen}(\theta)=L\frac{d^2\theta}{dt^2}\hat{\theta}
+        \end{cases}
+        \begin{cases}
+            m\vec{g}\cos(\theta)=\vec{F_T}\\
+            -\frac{\vec{g}}{L}\text{ sen}(\theta)=\frac{d^2\theta}{dt^2}\hat{\theta}
+        \end{cases}
+\end{equation}
+Donde el módulo de la última ecuación en el eje tangencial nos confirma exactamente la ecuación que esperaríamos deducir a partir del análisis de la leyes de newton, es decir:
+\begin{equation}
+    \frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta)
+\end{equation}
+
 
 % ####################################################################################################################
 % ####################################################################################################################
@@ -660,39 +745,16 @@ Aunque también podriamos dejarlo asi, en mi opiñon corrobora que no fue hecho 
 
     \item Verifique que la ecuación anterior es solución de la ecuación diferencial del movimiento $a = \frac{d^2x}{dt^2} = -\omega^2x$ e indique otra solución posible.
 
-    \respuesta{Para verificar que la ecuación dada es solución a la ecuación diferencial calculamos la segunda derivada de la posición respecto al tiempo y verificar que es coherente con la ecuación diferencial propuesta:}
+    \respuesta{Para verificar que la ecuación dada es solución a la ecuación diferencial, calculamos la segunda derivada de la posición respecto al tiempo y verificamos que el resultado es la misma expresión del movimiento oscilante unidimensional. Los detalles de la cuenta se pueden encontrar en el apéndice \ref{subsubsec:verifiacion-solucion-edo-MAS}}
     
-    \respuesta{Sea $x(t) = A_0 \text{sen}(\omega t + \varphi_0)\Longrightarrow \frac{dx}{dt}= A_0\omega \cos(\omega t + \varphi_0)$ al aplicar la regla de la cadana. Así mismo $\frac{d^2x}{dt^2}= -A_0\omega^2 \text{sen}(\omega t + \varphi_0)$ que al identificar que un factor de la ecuación es exactamente  $A_0\text{sen}(\omega t+ \varphi_0)$ lo podemos sustituir con la ecuación propuesta que describe la posición, es decir $\frac{d^2x}{dt^2}= -\omega^2x]$ que es exactamente la ecuación diferencial que delimita el comportamiento del movimiento.}
-    
+
     \respuesta{Otra posible solución se obtiene a partir de la descripción matemática de la misma solución pero empleando el operador $cos$ en vez de $\text{sen}$, para introducir el comportamiento oscilatorio, y empleando un desfaz diferente para que matemáticame las posiciones coincidan para un mismo $t$ dado el desfaz incertado por cambiar de operador ($\cos(\alpha) = \text{sen}\left(\alpha + \frac{\pi}{2}\right)$), esta solución sería $x(t) = A_0 \cos(\omega t + \phi_0)$.}
 
     \item A partir de las leyes de Newton para un péndulo ideal, halle la ecuación diferencial:
     \[ \frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta) \]
     Especifique el sistema de coordenadas utilizado para su obtención.
 
-    \respuesta{Definimos un sistema de coordenadas polares $(\hat{r}, \hat{\theta})$ con el origen en el punto de pivote, el eje radial en la dirección del hilo y el eje tangencial perpendicular al hilo en la dirección del crecimiento del ángulo $\theta$. Las fuerzas sobre la masa $m$ son la tensión $\vec{F_T}$, siempre en el eje radial hacia el pivote ($-\hat{r}$), y el peso $\vec{P}=m\vec{g}$ que siempre actua hacia 'abajo'. Representaremos las componentes del peso como $\vec{P}_r$ en el eje radial y $\vec{P}_{\theta}$ en el eje tangencial, análogamente la notación para las componentes de la acelaración son $\vec{a_r}$ y $\vec{a_\theta}$, donde $\vec{a_r}=0$ puesto que el movimiento solo se realiza en el eje tangencial.}
-
-    \respuesta{Descomponiendo el sistema de ecuaciones en los dos ejes (radiales y tangenciales) y sabiendo que la aceleración tangencial para un radio $r$ es $\vec{a_\theta}(t)=r\frac{d^2\theta}{dt^2}\hat{\theta}$, obtenemos:
-    \begin{equation}
-        \begin{cases}
-             \vec{P_r}-\vec{F_T}=\vec{0}\\
-             \vec{P_{\theta}}=m\vec{a_\theta}
-        \end{cases}
-        \begin{cases}
-            m\vec{g}\cos(\theta)=\vec{F_T}\\
-            -m\vec{g}\text{ sen}(\theta)=m\vec{a_\theta}
-        \end{cases}
-        \begin{cases}
-            m\vec{g}\cos(\theta)=\vec{F_T}\\
-            -\vec{g}\text{ sen}(\theta)=L\frac{d^2\theta}{dt^2}\hat{\theta}
-        \end{cases}
-        \begin{cases}
-            m\vec{g}\cos(\theta)=\vec{F_T}\\
-            -\frac{\vec{g}}{L}\text{ sen}(\theta)=\frac{d^2\theta}{dt^2}\hat{\theta}
-        \end{cases}
-    \end{equation}
-    Donde el módulo de la última ecuación en el eje tangencial nos confirma exactamente la ecuación diferencial planteada en la consigna $\frac{d^2\theta}{dt^2} = -\frac{g}{L} \text{sen}(\theta)$
-    }
+    \respuesta{La deducción completa parte de un análsis de las fuerzas ejercidas sobre la masa $m$ en el contexto del péndulo idal. El planteamiento detallado de la deducción de la EDO que describe el movimiento del péndulo idal se detalla en el apéndice \ref{subsubsec:deduccion-edo-pendulo-ideal}}.
 
     \item Al realizar la aproximación para ángulos pequeños ($\text{sen}(\theta) \cong \theta$), la ecuación se reescribe como $\frac{d^2\theta}{dt^2} = -\frac{g}{L}\theta$. ¿A qué tipo de movimiento corresponde? Escriba una posible solución $\theta(t)$.
 
