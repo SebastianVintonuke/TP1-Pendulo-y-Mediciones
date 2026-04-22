@@ -195,38 +195,38 @@ Dado que $\Delta \pi$ es despreciable según el criterio adoptado en el Apéndic
 \subsubsection{Cálculo de $\varepsilon_g$ en función del promedio de los puntos de la regresión lineal}
 \label{subsubsec:calculo-error-relativo-g-promedio-regresion}
 
-Tomamos $\Delta L = 1$, es decir la minima división de la regla y $\Delta T = \frac{\Delta t}{n} = 0,01$, siendo $n=20$ y $\Delta t = 0{,}2$ valor asignado por la guía \cite{catedra2007pendulo}.
+Tomamos $\Delta L = 1$, es decir la minima división de la regla y $\Delta T = \frac{\Delta t}{n} = 0{,}01$, siendo $n=20$ y $\Delta t = 0{,}2$ valor asignado por la guía \cite{catedra2007pendulo}.
 
 Calculamos el $\varepsilon_g$ correspondiente a cada $L$ usado en la regresión lineal.
 
 Para $(L_0=517,T_0=1{,}4360)$:
 \begin{equation}
-    \varepsilon_{g1} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{517} + 2 \cdot \frac{0,01}{1{,}4360} = 0.0158
+    \varepsilon_{g1} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{517} + 2 \cdot \frac{0{,}01}{1{,}4360} = 0{,}0158
     \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-1}
 \end{equation}
 
 Para $(L_0=730,T_0=1{,}7040)$:
 \begin{equation}
-    \varepsilon_{g2} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{730} + 2 \cdot \frac{0,01}{1{,}7040} = 0.0131
+    \varepsilon_{g2} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{730} + 2 \cdot \frac{0{,}01}{1{,}7040} = 0{,}0131
     \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-2}
 \end{equation}
 
 Para $(L_0=820,T_0=1{,}8355)$:
 \begin{equation}
-    \varepsilon_{g3} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{820} + 2 \cdot \frac{0,01}{1{,}8355} = 0.0121
+    \varepsilon_{g3} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{820} + 2 \cdot \frac{0{,}01}{1{,}8355} = 0{,}0121
     \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-3}
 \end{equation}
 
 Para $(L_0=1000,T_0=2{,}0220)$:
 \begin{equation}
-    \varepsilon_{g4} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{1000} + 2 \cdot \frac{0,01}{2{,}0220} = 0.0108
+    \varepsilon_{g4} = \frac{\Delta L}{L_0} + 2 \cdot \frac{\Delta T}{T_0} = \frac{1}{1000} + 2 \cdot \frac{0{,}01}{2{,}0220} = 0{,}0108
     \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-4}
 \end{equation}
 
 Calculamos el promedio:
 
 \begin{equation}
-    \varepsilon_{g} = \frac{0.0158 + 0.0131 + 0.0121 + 0.0108}{4} = 0.0129
+    \varepsilon_{g} = \frac{0{,}0158 + 0{,}0131 + 0{,}0121 + 0{,}0108}{4} = 0{,}0129
     \label{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-prom}
 \end{equation}
 
@@ -239,16 +239,16 @@ Calculamos el promedio:
 
 El criterio formal adoptado es $10 \cdot \varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
 
-Con los datos para el calibre: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,002 + 0,0029 = 0,0069$.
+Con los datos para el calibre: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0{,}002 + 0{,}0029 = 0{,}0069$.
 
-Se requiere $\varepsilon_\pi < 0,0069$.
+Se requiere $\varepsilon_\pi < 0{,}0069$.
 
 \begin{table}[H]
     \centering
     \label{tab:eleccion-pi-calibre}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0,0069$ \\ \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0{,}0069$ \\ \hline
         \csvreader[
             separator=semicolon,
             head=true,
@@ -259,16 +259,16 @@ Se requiere $\varepsilon_\pi < 0,0069$.
 \end{table}
 
 
-Con los datos para la regla: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0,04 + 0,01 = 0,09$.
+Con los datos para la regla: $2\,\varepsilon_d + \varepsilon_h = 2 \cdot 0{,}04 + 0{,}01 = 0{,}09$.
 
-Se requiere $\varepsilon_\pi < 0,09$.
+Se requiere $\varepsilon_\pi < 0{,}09$.
 
 \begin{table}[H]
     \centering
     \label{tab:eleccion-pi-regla}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0,09$ \\ \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0{,}09$ \\ \hline
         \csvreader[
             separator=semicolon,
             head=true,
@@ -278,16 +278,16 @@ Se requiere $\varepsilon_\pi < 0,09$.
     \end{tabular}
 \end{table}
 
-En el caso del pendulo ideal $10 \cdot \varepsilon_\pi < \,\varepsilon_L + 2 \varepsilon_T = 0.0129$, dado por la Ecuación \ref{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-prom}.
+En el caso del pendulo ideal $10 \cdot \varepsilon_\pi < \,\varepsilon_L + 2 \varepsilon_T = 0{,}0129$, dado por la Ecuación \ref{eq:error-relativo-periodo-pendulo-angulos-pequennos-resolucion-prom}.
 
-Se requiere $\varepsilon_\pi < 0,0129$.
+Se requiere $\varepsilon_\pi < 0{,}0129$.
 
 \begin{table}[H]
     \centering
     \label{tab:eleccion-pi-pendulo}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0.0129$ \\ \hline
+        $\pi_0$ & $\Delta\pi$ & $\varepsilon_\pi$ & $10\,\varepsilon_\pi < 0{,}0129$ \\ \hline
         \csvreader[
             separator=semicolon,
             head=true,
@@ -322,10 +322,10 @@ Esto se puede reescribir matricialmente como:
 
 \begin{equation}
     \begin{bmatrix}
-        0,517 & 1 \\
-        0,730 & 1 \\
-        0,820 & 1 \\
-        1,000 & 1
+        0{,}517 & 1 \\
+        0{,}730 & 1 \\
+        0{,}820 & 1 \\
+        1{,}000 & 1
     \end{bmatrix}
     \begin{bmatrix}
         c_1 \\
@@ -333,10 +333,10 @@ Esto se puede reescribir matricialmente como:
     \end{bmatrix}
     =
     \begin{bmatrix}
-        2,0620 \\
-        2,9036 \\
-        3,3690 \\
-        4,0884
+        2{,}0620 \\
+        2{,}9036 \\
+        3{,}3690 \\
+        4{,}0884
     \end{bmatrix}
     \label{eq:cuadrados-minimos-expresion-inicial}
 \end{equation}
@@ -529,7 +529,7 @@ Finalmente, obtenemos el error cuadrático total $r$:
 \end{equation}
 
 \begin{equation}
-    r = 0,003800839135
+    r = 0{,}003800839135
     \label{eq:error-cuadrados-minimos-r}
 \end{equation}
 
@@ -538,7 +538,7 @@ Adicionalmente, calculamos la dispersión como $d = \sum (x_i - \bar{x})^2$:
 Calculamos el promedio de los valores:
 
 \begin{equation}
-    \bar{x} = \frac{1}{n} \sum x_i = \frac{0,517 + 0,730 + 0,820 + 1,000}{4} = 0.76675
+    \bar{x} = \frac{1}{n} \sum x_i = \frac{0{,}517 + 0{,}730 + 0{,}820 + 1{,}000}{4} = 0{,}76675
     \label{eq:dispersion-cuadrados-minimos-r-promedio}
 \end{equation}
 
@@ -546,11 +546,11 @@ Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y 
 
 \begin{equation}
     d =
-    (0,517 - \bar{x})^2 +
-    (0,730 - \bar{x})^2 +
-    (0,820 - \bar{x})^2 +
-    (1,000 - \bar{x})^2
-    = 0.12096675
+    (0{,}517 - \bar{x})^2 +
+    (0{,}730 - \bar{x})^2 +
+    (0{,}820 - \bar{x})^2 +
+    (1{,}000 - \bar{x})^2
+    = 0{,}12096675
     \label{eq:dispersion-cuadrados-minimos-r}
 \end{equation}
 
@@ -581,14 +581,14 @@ Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y 
     (2{,}9036 - \bar{y})^2 +
     (3{,}3690 - \bar{y})^2 +
     (4{,}0884 - \bar{y})^2
-    = 2,16518027
+    = 2{,}16518027
     \label{eq:error-cuadrados-minimos-divisor-para-R2}
 \end{equation}
 
 Finalmente:
 
 \begin{equation}
-    R^2 = 1 - \frac{0,003800839135}{2,16518027} = 0,9982445623
+    R^2 = 1 - \frac{0{,}003800839135}{2{,}16518027} = 0{,}9982445623
     \label{eq:error-cuadrados-minimos-formula-R2-resolucion}
 \end{equation}
 
@@ -692,8 +692,8 @@ Donde el módulo de la última ecuación en el eje tangencial nos confirma exact
     \item El caso del número $\pi$: ¿Cuántos decimales se le deben asignar al número $\pi$ para que el error cometido por el recorte sea despreciable frente al error de las mediciones directas?
 
     \respuesta{
-        Para el calibre, se adoptó $\pi = 3,142$ (3 decimales) ya que cumple el criterio $10 \cdot \varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
-        Para la regla milimetrada, se adoptó $\pi = 3,14$ (2 decimales) ya que cumple el mismo criterio.
+        Para el calibre, se adoptó $\pi = 3{,}142$ (3 decimales) ya que cumple el criterio $10 \cdot \varepsilon_\pi < 2\,\varepsilon_d + \varepsilon_h$.
+        Para la regla milimetrada, se adoptó $\pi = 3{,}14$ (2 decimales) ya que cumple el mismo criterio.
         El desarrollo se puede encontrar en el Apéndice \ref{subsubsec:criterio-eleccion-pi}.
     }
 
@@ -722,7 +722,7 @@ Donde el módulo de la última ecuación en el eje tangencial nos confirma exact
     \item Tras buscar los valores tabulados para la densidad del latón y del bronce en manuales técnicos: ¿Es posible decidir con seguridad de qué material está construido el cilindro utilizado en la práctica? Justifique su respuesta comparando los intervalos medidos con los valores de tabla.
 
     \respuesta{
-        La densidad de referencia más consistente es la de la constante de las pesas de latón $8,4 \frac{g}{cm^3}$.
+        La densidad de referencia más consistente es la de la constante de las pesas de latón $8{,}4 \frac{g}{cm^3}$.
         Esta, está evidentemente contenida en el rango mas general del laton.
         El bronce se encuentra fuera del rango del calibre, por lo que podemos descartarlo.
         Si por el contrario, solo dispusieramos de los resultados de la regla milimetrada o la probeta no podríamos hacerlo, ya que, sus rangos de incertidumbre sí lo contienen.
@@ -784,7 +784,7 @@ Donde el módulo de la última ecuación en el eje tangencial nos confirma exact
 
         \respuesta{
             En el modelo teórico del péndulo ideal, que asume una masa puntual sin volumen, el período no depende del valor de la masa.
-            Sin embargo, dado que en el experimento real no se usó una masa puntual sino una esfera de aproximadamente $1,7 cm$ de radio, la distribución de esa masa afecta la inercia.
+            Sin embargo, dado que en el experimento real no se usó una masa puntual sino una esfera de aproximadamente $1{,}7$ cm de radio, la distribución de esa masa afecta la inercia.
             Por eso, la guía plantea una corrección con la Ecuación \ref{eq:periodo-pendulo-angulos-pequennos-corregido}.
         }
 
