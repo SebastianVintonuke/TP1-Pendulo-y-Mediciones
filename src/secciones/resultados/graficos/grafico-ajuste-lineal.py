@@ -2,17 +2,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 data = [
-    {"x": 0.517, "y": 2.0620, "dx": 0.045,  "dy": -0.04},
-    {"x": 0.730, "y": 2.9036, "dx": 0.015, "dy": -0.1},
-    {"x": 0.820, "y": 3.3690, "dx": 0.04, "dy": -0.1},
-    {"x": 1.000, "y": 4.0884, "dx": -0.045,  "dy": 0.0},
+    {"x": 0.517, "y": 2.0620, "dx": 0.045,  "dy": -0.04, "rel_error": 0.0158},
+    {"x": 0.730, "y": 2.9036, "dx": 0.015, "dy": -0.13, "rel_error": 0.0131},
+    {"x": 0.820, "y": 3.3690, "dx": 0.04, "dy": -0.1, "rel_error": 0.0121},
+    {"x": 1.000, "y": 4.0884, "dx": -0.045,  "dy": 0.0, "rel_error": 0.0108},
 ]
 
 L = np.array([d["x"] for d in data])
 T2 = np.array([d["y"] for d in data])
+relative_errors = np.array([d["rel_error"] for d in data])
+yerr = T2 * relative_errors
 
 fig, ax = plt.subplots()
 
+ax.errorbar(L, T2, yerr=yerr, fmt='none', ecolor='black', elinewidth=1, capsize=3, zorder=5)
 ax.scatter(L, T2, color='black', s=10, zorder=10)
 
 for d in data:
