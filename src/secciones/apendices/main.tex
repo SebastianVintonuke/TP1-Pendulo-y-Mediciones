@@ -385,7 +385,7 @@ Entonces, nos queda:
     \end{bmatrix}
     =
     \begin{bmatrix}
-        2{,}472589 & 3{,}067 \\
+        2{,}4726 & 3{,}067 \\
         3{,}067 & 4
     \end{bmatrix}
     \label{eq:cuadrados-minimos-ATA}
@@ -405,7 +405,7 @@ Entonces, nos queda:
     \end{bmatrix}
     =
     \begin{bmatrix}
-        10{,}036662 \\
+        10{,}0367 \\
         12{,}423
     \end{bmatrix}
     \label{eq:cuadrados-minimos-ATb}
@@ -421,12 +421,12 @@ Finalmente, invirtiendo la matriz $A^T A$ y multiplicándola a ambos lados, obte
 \begin{equation}
     =
     \begin{bmatrix}
-        2{,}472589 & 3{,}067 \\
+        2{,}4726 & 3{,}067 \\
         3{,}067 & 4
     \end{bmatrix}
     ^{-1}
     \begin{bmatrix}
-        10{,}036662 \\
+        10{,}0367 \\
         12{,}423
     \end{bmatrix}
     \label{eq:cuadrados-minimos-solucion-2}
@@ -435,11 +435,11 @@ Finalmente, invirtiendo la matriz $A^T A$ y multiplicándola a ambos lados, obte
 \begin{equation}
     =
     \begin{bmatrix}
-        8{,}266734454 & -6{,}338518643 \\
-        -6{,}338518643 & 5{,}110059169
+        8{,}2667 & -6{,}3385 \\
+        -6{,}3385 & 5{,}1101
     \end{bmatrix}
     \begin{bmatrix}
-        10{,}036662 \\
+        10{,}0367 \\
         12{,}423
     \end{bmatrix}
     \label{eq:cuadrados-minimos-solucion-3}
@@ -448,13 +448,13 @@ Finalmente, invirtiendo la matriz $A^T A$ y multiplicándola a ambos lados, obte
 \begin{equation}
     =
     \begin{bmatrix}
-        4{,}227002475 \\
-        -0{,}135304144
+        4{,}2270 \\
+        -0{,}1353
     \end{bmatrix}
     \label{eq:cuadrados-minimos-solucion-4}
 \end{equation}
 
-Entonces, el mejor ajuste por cuadrados mínimos es $a(x) = 4{,}227002475 \cdot x -0{,}135304144$.
+Entonces, el mejor ajuste por cuadrados mínimos es $a(x) = 4{,}2270 \cdot x -0{,}1353$.
 
 Se verificó el resultado del desarrollo manual con una planilla de cálculo y se obtuvo el mismo resultado $a(x) = 4{,}23 \cdot x -0{,}135$.\\
 
@@ -476,15 +476,15 @@ Primero obtenemos $A\vec{x}$
         1{,}000 & 1
     \end{bmatrix}
     \begin{bmatrix}
-        4{,}227002475 \\
-        -0{,}135304144
+        4{,}2270 \\
+        -0{,}1353
     \end{bmatrix}
     =
     \begin{bmatrix}
-        2{,}050056136 \\
-        2{,}950407663 \\
-        3{,}330837886 \\
-        4{,}091698331
+        2{,}0501 \\
+        2{,}9504 \\
+        3{,}3308 \\
+        4{,}0917
     \end{bmatrix}
     \label{eq:error-cuadrados-minimos-Ax}
 \end{equation}
@@ -501,17 +501,17 @@ Finalmente, obtenemos el error cuadrático total $r$:
     \end{bmatrix}
     -
     \begin{bmatrix}
-        2{,}050056136 \\
-        2{,}950407663 \\
-        3{,}330837886 \\
-        4{,}091698331
+        2{,}0501 \\
+        2{,}9504 \\
+        3{,}3308 \\
+        4{,}0917
     \end{bmatrix}
     =
     \begin{bmatrix}
-        0{,}011943864 \\
-        -0{,}046807663 \\
-        0{,}038162114 \\
-        -0{,}003298331
+        0{,}0119 \\
+        -0{,}0468 \\
+        0{,}0382 \\
+        -0{,}0033
     \end{bmatrix}
     \label{eq:error-cuadrados-minimos-resolucion}
 \end{equation}
@@ -519,17 +519,17 @@ Finalmente, obtenemos el error cuadrático total $r$:
 \begin{equation}
     r = \|
     \begin{bmatrix}
-        0{,}011943864 \\
-        -0{,}046807663 \\
-        0{,}038162114 \\
-        -0{,}003298331
+        0{,}0119 \\
+        -0{,}0468 \\
+        0{,}0382 \\
+        -0{,}0033
     \end{bmatrix}
     \| ^2
     \label{eq:error-cuadrados-minimos-resolucion-2}
 \end{equation}
 
 \begin{equation}
-    r = 0{,}003800839135
+    r = 0{,}0038
     \label{eq:error-cuadrados-minimos-r}
 \end{equation}
 
@@ -538,7 +538,7 @@ Adicionalmente, calculamos la dispersión como $d = \sum (x_i - \bar{x})^2$:
 Calculamos el promedio de los valores:
 
 \begin{equation}
-    \bar{x} = \frac{1}{n} \sum x_i = \frac{0{,}517 + 0{,}730 + 0{,}820 + 1{,}000}{4} = 0{,}76675
+    \bar{x} = \frac{1}{n} \sum x_i = \frac{0{,}517 + 0{,}730 + 0{,}820 + 1{,}000}{4} = 0{,}7668
     \label{eq:dispersion-cuadrados-minimos-r-promedio}
 \end{equation}
 
@@ -550,7 +550,7 @@ Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y 
     (0{,}730 - \bar{x})^2 +
     (0{,}820 - \bar{x})^2 +
     (1{,}000 - \bar{x})^2
-    = 0{,}12096675
+    = 0{,}1210
     \label{eq:dispersion-cuadrados-minimos-r}
 \end{equation}
 
@@ -569,7 +569,7 @@ Con el objetivo de validar nuestro desarrollo manual, se decidió calcular coefi
 Calculamos el promedio de los valores:
 
 \begin{equation}
-    \bar{y} = \frac{1}{n} \sum y_i = \frac{2{,}0620 + 2{,}9036 + 3{,}3690 + 4{,}0884}{4} = 3{,}10575
+    \bar{y} = \frac{1}{n} \sum y_i = \frac{2{,}0620 + 2{,}9036 + 3{,}3690 + 4{,}0884}{4} = 3{,}1058
     \label{eq:error-cuadrados-minimos-promedio-para-R2}
 \end{equation}
 
@@ -581,18 +581,16 @@ Calculamos la sumatoria de los cuadrados de las diferencias entre los valores y 
     (2{,}9036 - \bar{y})^2 +
     (3{,}3690 - \bar{y})^2 +
     (4{,}0884 - \bar{y})^2
-    = 2{,}16518027
+    = 2{,}1652
     \label{eq:error-cuadrados-minimos-divisor-para-R2}
 \end{equation}
 
 Finalmente:
 
 \begin{equation}
-    R^2 = 1 - \frac{0{,}003800839135}{2{,}16518027} = 0{,}9982445623
+    R^2 = 1 - \frac{0{,}0038}{2{,}1652} = 0{,}9982
     \label{eq:error-cuadrados-minimos-formula-R2-resolucion}
 \end{equation}
-
-\todo{Habria que adoptar una convencion y redondear todos los valores intermedios.}
 
 % ####################################################################################################################
 % ####################################################################################################################

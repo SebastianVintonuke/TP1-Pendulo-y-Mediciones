@@ -160,7 +160,7 @@ La incertidumbre relativa $\varepsilon_M = \frac{0{,}01}{149{,}66} \approx 0{,}0
 Cálculo de la densidad para el calibre:
 
 \begin{equation}
-    \rho_0 = \frac{M}{V} = \frac{149{,}66}{17{,}94} = 8{,}34 \frac{g}{cm^3}
+    \rho_0 = \frac{M}{V} = \frac{149{,}66}{17{,}94} = 8{,}342 \frac{g}{cm^3}
     \label{eq:densidad-resolucion-calibre}
 \end{equation}
 
@@ -170,12 +170,12 @@ Cálculo de la densidad para el calibre:
 \end{equation}
 
 \begin{equation}
-    \Delta \rho = \rho_0 \cdot \varepsilon_\rho = 8{,}34 \cdot 0{,}0069 = 0{,}057 \frac{g}{cm^3}
+    \Delta \rho = \rho_0 \cdot \varepsilon_\rho = 8{,}342 \cdot 0{,}0069 = 0{,}057 \frac{g}{cm^3}
     \label{eq:incerteza-absoluta-densidad-resolucion-calibre}
 \end{equation}
 
 \begin{equation}
-    \boxed{\rho_{calibre} = 8{,}34 \pm 0{,}057 \frac{g}{cm^3}}
+    \boxed{\rho_{calibre} = 8{,}342 \pm 0{,}057 \frac{g}{cm^3}}
     \label{eq:densidad-resolucion-final-calibre}
 \end{equation}
 
@@ -304,7 +304,7 @@ Se optó por realizar el cálculo de $g$ mediante regresión lineal de $T^2$ en 
     \end{tabular}
 \end{table}
 
-El ajuste obtenido por cuadrados mínimos fue $a(x) = 4{,}23 \cdot x -0{,}135$.
+El ajuste obtenido por cuadrados mínimos fue $a(x) = 4{,}2270 \cdot x -0{,}1353$.
 
 El desarrollo del ajuste por cuadrados mínimos se puede encontrar en el Apéndice~\ref{subsubsec:ajuste-cuadrados-minimos-pendulo}.
 
@@ -325,7 +325,7 @@ Igualamos la pendiente del ajuste a $\frac{4\pi^2}{g}$ y despejamos en función 
 Finalmente, se utiliza la pendiente obtenida y se toma $\pi$ = 3,142 para calcular $g$:
 
 \begin{equation}
-    g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3{,}142^2}{4{,}23} = 9{,}33 \frac{m}{s^2}
+    g_0 = \frac{4\pi^2}{m} = \frac{4 \cdot 3{,}142^2}{4{,}2270} = 9{,}3420 \frac{m}{s^2}
     \label{eq:resolucion-g}
 \end{equation}
 
@@ -348,14 +348,14 @@ El error es de un $1{,}29\%$ menor al $2\%$, por lo tanto, el resultado obtenido
 Finalmente, el error absoluto es:
 
 \begin{equation}
-    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{,}0129 = 0{,}12 \frac{m}{s^2}
+    \Delta g = g_0 \cdot \varepsilon_g = 9{,}3420 \cdot 0{,}0129 = 0{,}1205 \frac{m}{s^2}
     \label{eq:incerteza-absoluta-g-promedio}
 \end{equation}
 
 Y el resultado final para $g$:
 
 \begin{equation}
-    \boxed{g = 9{,}33 \pm 0{,}12 \frac{m}{s^2}}
+    \boxed{g = 9{,}34 \pm 0{,}12 \frac{m}{s^2}}
     \label{eq:g-final}
 \end{equation}
 
@@ -371,7 +371,7 @@ El desarrollo completo se puede encontrar en el Apéndice~\ref{subsubsec:propaga
 Para calcular $\Delta m$ utilizaremos la siguiente fórmula para el error estándar de la pendiente.
 
 \begin{equation}
-    \Delta m = \sqrt{ \frac{r}{(n-2)d} } = \sqrt{ \frac{0{,}003800839135}{(4-2) \cdot 0{,}12096675} } = 0{,}1253405917
+    \Delta m = \sqrt{ \frac{r}{(n-2)d} } = \sqrt{ \frac{0{,}0038}{(4-2) \cdot 0{,}1210} } = 0{,}1253
     \label{eq:incerteza-absoluta-m}
 \end{equation}
 
@@ -380,7 +380,7 @@ Siendo $r$ la suma de los residuos al cuadrado, $d$ la dispersion y $n$ el núme
 El desarrollo completo del cálculo de $r$ y $d$ se pueden encontrar en Apéndice~\ref{subsubsec:ajuste-cuadrados-minimos-pendulo}.
 
 \begin{equation}
-    \varepsilon_g = \frac{\Delta m}{m_0} = \frac{0{,}1253405917}{4{,}227002475} = 0{,}02965235825
+    \varepsilon_g = \frac{\Delta m}{m_0} = \frac{0{,}1253}{4{,}2270} = 0{,}0296
     \label{eq:error-relativo-g-pendiente}
 \end{equation}
 
@@ -389,14 +389,14 @@ El error es de un 2,96 \% mayor al 2 \%, por lo tanto, el resultado obtenido no 
 Finalmente, el error absoluto es:
 
 \begin{equation}
-    \Delta g = g_0 \cdot \varepsilon_g = 9{,}33 \cdot 0{,}02965235825 = 0{,}2766 \frac{m}{s^2}
+    \Delta g = g_0 \cdot \varepsilon_g = 9{,}3420 \cdot 0{,}0296 = 0{,}2765 \frac{m}{s^2}
     \label{eq:incerteza-absoluta-g-pendiente-resultado}
 \end{equation}
 
 Y el resultado final para $g$:
 
 \begin{equation}
-    \boxed{g = 9{,}33 \pm 0{,}2766 \frac{m}{s^2}}
+    \boxed{g = 9{,}34 \pm 0{,}28 \frac{m}{s^2}}
     \label{eq:g-final-pendiente}
 \end{equation}
 
@@ -446,7 +446,7 @@ Para la aproximación lineal de 12 puntos, utilizamos directamente una herramien
 Finalmente, el resultado obtenido.
 
 \begin{equation}
-    \boxed{g = 9{,}579 \pm 0{,}255 \frac{m}{s^2}}
+    \boxed{g = 9{,}58 \pm 0{,}26 \frac{m}{s^2}}
     \label{eq:g-final-2}
 \end{equation}
 
