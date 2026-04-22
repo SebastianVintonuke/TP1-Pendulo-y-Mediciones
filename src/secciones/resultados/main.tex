@@ -253,7 +253,7 @@ Se tomó el tiempo de 20 oscilaciones.
     \label{tab:tiempos}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \textbf{$L_0$ (mm)} & $\theta = 5\textdegree$ & $\theta = 9\textdegree$ & $\theta = 15\textdegree$ & $\theta = 20\textdegree$ \\ \hline
+        \textbf{$L_0$ (mm)} & $\theta = 5^{\circ}$ & $\theta = 9^{\circ}$ & $\theta = 15^{\circ}$ & $\theta = 20^{\circ}$ \\ \hline
         \csvreader[
             separator=semicolon,
             head=true,
@@ -271,7 +271,7 @@ Se calculó el período $T = \frac{t}{n}$ para cada combinación $(L, \theta)$:
     \label{tab:periodos}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        $L_0$ (mm) & $T$ ($\theta=5\textdegree$) & $T$ ($\theta=9\textdegree$) & $T$ ($\theta=15\textdegree$) & $T$ ($\theta=20\textdegree$) \\ \hline
+        $L_0$ (mm) & $T$ ($\theta=5^{\circ}$) & $T$ ($\theta=9^{\circ}$) & $T$ ($\theta=15^{\circ}$) & $T$ ($\theta=20^{\circ}$) \\ \hline
         \csvreader[
             separator=semicolon,
             head=true,
@@ -286,11 +286,11 @@ Se calculó el período $T = \frac{t}{n}$ para cada combinación $(L, \theta)$:
 
 \subsubsection{Práctica 2 --- Cálculo de $g$ por regresión lineal}
 
-Se optó por realizar el cálculo de $g$ mediante regresión lineal de $T^2$ en función de $L$, utilizando las mediciones correspondientes a $\theta$ = 5$\textdegree$, ya que es el ángulo más pequeño y, por lo tanto, el que mejor se ajusta al modelo de péndulo ideal.
+Se optó por realizar el cálculo de $g$ mediante regresión lineal de $T^2$ en función de $L$, utilizando las mediciones correspondientes a $\theta$ = 5$^{\circ}$, ya que es el ángulo más pequeño y, por lo tanto, el que mejor se ajusta al modelo de péndulo ideal.
 
 \begin{table}[H]
     \centering
-    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$\textdegree$}
+    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$^{\circ}$}
     \label{tab:regresion-datos}
     \begin{tabular}{|c|c|}
         \hline
@@ -408,11 +408,11 @@ Atribuimos esto a que una aproximación tiene pocos puntos.
 
 Decidimos realizar otra aproximación lineal usando más datos independientemente del ángulo inicial, esto no es del todo incorrecto, ya que la fórmula ideal no depende del ángulo inicial.
 Sin embargo, los puntos correspondientes a ángulos más grandes introducirán errores mayores, ya que el sistema se comportará de forma más impredecible para nuestro modelo ideal.
-Por esta razón decidimos excluir $\theta=20\textdegree$, y estimamos que para el resto de ángulos el error introducido por este factor será menor al error actual derivado de la falta de datos.
+Por esta razón decidimos excluir $\theta=20^{\circ}$, y estimamos que para el resto de ángulos el error introducido por este factor será menor al error actual derivado de la falta de datos.
 
 \begin{table}[H]
     \centering
-    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$\textdegree$, 9$\textdegree$ y 15$\textdegree$}
+    \caption{Datos para el cálculo de la regresión lineal para $\theta$ = 5$^{\circ}$, 9$^{\circ}$ y 15$^{\circ}$}
     \label{tab:regresion-datos-2}
     \begin{tabular}{|c|c|}
         \hline
@@ -430,7 +430,7 @@ Para la aproximación lineal de 12 puntos, utilizamos directamente una herramien
 
 \begin{table}[H]
     \centering
-    \caption{Resultados de la regresión lineal para $\theta$ = 5$\textdegree$, 9$\textdegree$ y 15$\textdegree$}
+    \caption{Resultados de la regresión lineal para $\theta$ = 5$^{\circ}$, 9$^{\circ}$ y 15$^{\circ}$}
     \label{tab:regresion-2-resultados}
     \begin{tabular}{|c|c|}
         \hline
